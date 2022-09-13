@@ -1,0 +1,26 @@
+@import '../../../variable.scss';
+
+.question{
+  @extend .question;
+}
+
+.border-less-input,.border-less-input:focus,.border-less-input:hover,.border-less-input:focus-visible{
+  border: none;
+  outline: none;
+  flex-grow: 1;
+}
+
+.control-label{
+  width: fit-content;
+  flex-grow: 1;
+  min-width: $control-label-min-width;
+}
+
+.inline{
+  display: inline;
+}
+
+.form-control{
+  min-width: $control-label-min-width;
+  width: auto;
+}

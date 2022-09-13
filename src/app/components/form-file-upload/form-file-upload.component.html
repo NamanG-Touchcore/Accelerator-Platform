@@ -1,0 +1,24 @@
+<div *ngIf="formInput.question" [formGroup]="formInput.form" class="form-group">
+    <div>
+        <h2 class="text-center mt-3 mb-3"><span *ngIf="isQuestionTextEmpty() && !isOptionalQuestion()"
+                class="asterisk">*</span>{{formInput.question.title}}</h2>
+        <div class="question row"><span *ngIf="!isQuestionTextEmpty() && !isOptionalQuestion()"
+                class="asterisk">*</span>{{formInput.question.text}}
+        </div>
+        <div class="d-flex justify-content-center dashed-border mt-5">
+            <div class="question file-input w-100 inline-block">
+                <input [ngStyle]="{'opacity': disabled ? '0.5' : '1' }" (change)="onChange($event)" type="file" id="myFile" class="border-less-input" name="img">
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-5" *ngIf="fileUrl">
+            <div class="file-info row">
+                <div class="col-10">
+                    <a class="file-info-link" href="{{fileUrl}}">{{getFileName()}}</a>
+                </div>
+                <div class="col-2">
+                    <span class="remove-attachment float-right" *ngIf="!disabled" (click)="onRemoveAttachment()"><i class="fa-solid fa-circle-xmark"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

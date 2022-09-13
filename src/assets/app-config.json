@@ -1,0 +1,7 @@
+{
+    "idleTimeoutPeriodForLogoutPopup": 1800,
+    "idleTimeoutPeriodForLogout": 300,
+    "baseUrl": "https://nof1-mobile-api-dev.azurewebsites.net/",
+    "surveyDataBlobBaseUrl": "https://nof1ifopastoragedev.blob.core.windows.net/mobile-survey-data/",
+    "portalUrl": "https://ifopa-dev.nof1health.com/"
+}

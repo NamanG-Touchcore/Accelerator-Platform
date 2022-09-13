@@ -1,0 +1,54 @@
+<footer class="fixed-bottom">
+    <div class="buttons" *ngIf="!hyperlinkClicked && surveyStarted">
+        <button class="btn btn-primary mt-3 mb-3" (click)="onNext(); scroll()" *ngIf="!isLastStep() && !sectionHasExternalHtmlContent()" [disabled]="disableNext()">
+            {{getContinueButtonTitle()}}
+        </button>
+        <div class="bottom-right-next-btn " *ngIf="sectionHasExternalHtmlContent()">
+            <button class="border-less-next-btn " (click)="onNext(); scroll()" *ngIf="!isLastStep()" [disabled]="disableNext()">
+                {{getContinueButtonTitle()}}
+            </button>
+        </div>
+    </div>
+    <div class="buttons" *ngIf="showSubmitButton()">
+        <!-- This should be enabled only when all the sections are completed -->
+        <button [disabled]="!this.allSectionsCompleted()" (click)="onSubmitSurveyClicked()" class="btn btn-primary mt-5 mb-3">
+            {{getSubmitButtonTitle()}}
+        </button>
+    </div>
+    <div class="buttons" *ngIf="showNextSurveySectionButton()">
+        <!-- This should be enabled only when all the sections are completed -->
+        <button (click)="onNextSectionClick()" class="btn btn-primary mt-5 mb-3">
+            {{ 'content.nextSection' | translate }}
+        </button>
+    </div>
+</footer>
+
+<div #top style="position: absolute; top: 0;"></div>
+
+<!-- Show modal to submit the survey -->
+<div [ngStyle]="{'display':displayActionModal}" class="modal" id="displayStaticModal" tabindex="-1" aria-hidden="true" role="dialog">
+    <app-form-action-modal continueButtonText="{{ 'content.continue' | translate }}" cancelButtonText="{{ 'content.cancel' | translate }}" messageTitle="{{ 'content.submitButton' | translate }}" [messageBody]="getSubmitSurveyInfo()" (onContinue)="onSubmitSurvey()"
+        (onCancel)="onCancelSubmitSurvey()">
+    </app-form-action-modal>
+</div>
+
+
+<!--  eConsent modal is used for signature (username and password) -->
+<div [ngStyle]="{'display':displayeConsentModal}" class="modal" id="displayStaticModal" tabindex="-1" aria-hidden="true" role="dialog">
+    <app-form-esignature-component (eSignatureCancelled)="onESignatureCancelled()" (eSignatureCompleted)="onESigntatureCompleted()">
+    </app-form-esignature-component>
+</div>
+
+
+
+<!--  Static modal is used for showing validation success messages -->
+<div [ngStyle]="{'display':displayModalStyle}" id="displayStaticModal" tabindex="-1" aria-hidden="true" role="dialog">
+    <app-form-static-modal message="{{ 'content.successMessage' | translate }}" (done)="onSurveyCompleted()" title="{{ 'content.successTitle' | translate }}" footer="{{ 'content.done' | translate }}">
+    </app-form-static-modal>
+</div>
+
+<!--  Loader modal is used for showing loading messages -->
+<div class="modal" id="displayStaticModal" tabindex="-1" aria-hidden="true" role="dialog" [ngStyle]="{'display':displayLoadingModalStyle}">
+    <app-form-loader-modal [message]="getLoadingMessage()">
+    </app-form-loader-modal>
+</div>

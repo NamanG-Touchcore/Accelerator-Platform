@@ -1,0 +1,52 @@
+
+.question{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #d2d2d2;
+      font-weight: 500;
+    }
+    label{
+      margin-bottom: 0px;
+    }
+    .borderlessinput,.borderlessinput:focus,.borderlessinput:hover{
+      -webkit-border: none;
+      -moz-border: none;
+      border: none;
+      -webkit-outline: none;
+      -moz-outline: none;
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    
+    .inlineBlock{
+      display: flex;
+      flex-direction: row;
+      flex-flow: row wrap;
+    }
+    
+    .inline{
+      display: inline;
+    }
+  
+    .inputLabel{
+      width: -moz-fit-content;
+      width: fit-content;
+      min-width: 180px;
+    }
+  
+  div.inlineBlock > input, input:focus, input:hover {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+  }
+  @import '../../../variable.scss';
+  #errorMessage{
+    display: none;
+    color: $error-msg-color;
+    font-size: $body-font-size;
+  }

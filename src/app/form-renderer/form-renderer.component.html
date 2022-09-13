@@ -1,0 +1,36 @@
+<div *ngIf="sectionConfiguration && form" class="topMargin">
+    <span class="ribbon-badge" *ngIf="formService.isSurveyReadOnlyMode()" ><app-form-badge></app-form-badge></span>
+    <div [formGroup]="form" class="mb-5">
+        <div [ngSwitch]="sectionConfiguration.steps[questionIndex] && sectionConfiguration.steps[questionIndex].step">
+            <div *ngSwitchCase="'visualConsent'">
+                <p *ngIf="!hyperlinkClicked" class="text-center mt-3 mb-3">
+                    {{sectionConfiguration.steps[questionIndex].instructions}}
+                </p>
+                <app-form-visual-consent
+                    [section]="sectionConfiguration.steps[questionIndex].document.sections[childQuestionIndex]">
+                </app-form-visual-consent>
+            </div>
+            <div *ngSwitchCase="'consentReview'">
+                <h1 class="text-center mt-3 mb-3">{{ 'content.review' | translate }}</h1>
+                <p class="text-center mt-3 mb-3">{{sectionConfiguration.steps[questionIndex].instructions}}
+                </p>
+                <app-form-consent-review [sections]="sectionConfiguration.steps[questionIndex].document.sections">
+                </app-form-consent-review>
+            </div>
+            <div *ngSwitchCase="'instruction'">
+                <app-form-instruction [question]="sectionConfiguration.steps[questionIndex]"></app-form-instruction>
+            </div>
+            <div *ngSwitchCase="'question'">
+                <app-form-question [formInput]="getFormInputModel(sectionConfiguration.steps[questionIndex],form)">
+                </app-form-question>
+            </div>
+            <div *ngSwitchCase="'form'">
+                <app-form-question [formInput]="getFormInputModel(sectionConfiguration.steps[questionIndex],form)">
+                </app-form-question>
+            </div>
+            <div *ngSwitchCase="'completion'">
+                <app-form-completion [question]="sectionConfiguration.steps[questionIndex]"></app-form-completion>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+@import '../../../variable.scss';
+
+.survey-header {
+    padding: $survey-header-padding;
+    background-color: $survey-header-background-color;
+    box-shadow: $survey-header-box-shadow;
+    height: $survey-header-height;
+}
+.fixed-top{
+    z-index: $header-fixed-top-z-index;
+}
+.header-text-margin{
+    margin-top: $header-text-margin;
+}
+.back-icon{
+    font-size: $back-icon-font-size;
+    color: $icon-color;
+    margin-left: $icon-margin;
+    margin-top:  $top-margin-8;
+    cursor: pointer;
+}
+.cancel-button{
+    color: $primary-color; 
+    font-size:$body-font-size;
+    padding-right: $cancel-button-padding-right;
+    margin-top: $top-margin-8;
+    cursor: pointer;
+}
+.section-pagination{
+    font-size: smaller;
+}
+.w-max-content{
+    max-width: $header-content-max-width;
+    margin-bottom: $header-content-margin-bottom;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: $header-content-color;
+    font-weight: $header-content-font-weight;
+    margin-top: $w-max-content-margn-top;
+}
+.middle-title{
+    display: grid;
+    text-align: center;
+    color: $header-content-color;
+}
+.blue-icon{
+    color: $primary-color;
+    margin-right: $icon-margin;
+    cursor: pointer;
+}
+.fa-user{
+    margin-top: $top-margin-8;
+    color: $icon-color;
+    font-size: $body-font-size;
+    margin-left: $user-icon-left-margin;
+    cursor: pointer;
+}
+

@@ -1,0 +1,31 @@
+<div class="fixed-top">
+    <div class="row survey-header buttons" id="header">
+        <div class="col-2 backButton" onclick="previous()">
+            <button *ngIf="!hidePrevious()" class="border-less-btn" (click)="onPrev()"> <i
+                    class="fas fa-chevron-left back-icon"></i> </button>
+
+            <div *ngIf="showHeaderIcons()">
+                <span (click)="onShowProfile()"><i class="fa fa-user"></i></span>
+            </div>
+        </div>
+        <div class="col-8 d-flex justify-content-center">
+            <div
+                *ngIf="!hyperlinkClicked && surveyStarted && !formStepNavigatorService.isRegistrationForm() && !isSurveyReadOnlyMode()">
+                <app-form-line-progress-bar-with-no-percent></app-form-line-progress-bar-with-no-percent>
+            </div>
+            <div class="middle-title">
+                <h6 class="text-center w-max-content" *ngIf="hyperlinkClicked">{{ getHeaderTitle() | titlecase}}</h6>
+                <h6 class="text-center w-max-content" *ngIf="!hyperlinkClicked">{{ getHeaderTitle()}}</h6>
+                <span class="section-pagination">{{ showPaginationOnSection() }}</span>
+            </div>
+        </div>
+        <div class="col-2 d-flex justify-content-end cancel-button" id="cancel">
+            <div (click)="onCancel()" *ngIf="showExitButton()">
+                {{getExitButtonText()}}
+            </div>
+            <div *ngIf="step && getHeaderTitle()==step.sectionTitle">
+                <a (click)="onDone()">{{ 'content.done' | translate }}</a>
+            </div>
+
+        </div>
+    </div>

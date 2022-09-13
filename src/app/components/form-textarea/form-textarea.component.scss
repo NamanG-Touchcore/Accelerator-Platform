@@ -1,0 +1,14 @@
+@import '../../../variable.scss';
+.border-less-input,.border-less-input:focus,.border-less-input:hover,.border-less-input:focus-visible{
+  border: none;
+  outline: none;
+  width: $text-border-less-input-width;
+}
+.question{
+ @extend .question;
+}
+
+.control-label{
+  width: $text-control-label;
+  font-weight: 600;
+}

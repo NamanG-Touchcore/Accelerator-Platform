@@ -1,0 +1,10 @@
+@import '../../../variable.scss';
+.multiple-pickers {
+    display: inline-flex;
+}
+.question{
+   @extend .question;
+   justify-content: center;
+   padding-left: $padding-left-15;
+   padding-right: $padding-right-15;
+}

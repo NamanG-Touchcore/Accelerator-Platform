@@ -1,0 +1,68 @@
+@import '../../../variable.scss';
+.fixed-bottom {
+    background: $primary-background-color;
+}
+.bottom-right-next-btn {
+    background: $secondary-background-color;
+    position: relative;
+    height: $bottom-right-next-btn-height;
+    border-top: 1px solid $secondary-border-color;
+}
+.border-less-next-btn  {
+    padding: $border-less-next-btn-padding;
+    border: none;
+    background: transparent;
+    width: $border-less-next-btn-width;
+    float: right;
+    color:$primary-color;
+    opacity: 1;
+}
+.border-less-next-btn:disabled{
+    color: $primary-color;
+    opacity:$border-less-next-btn-disabled-opacity;
+}
+.border-less-next-btn:not(:disabled):not(.disabled).active:focus,
+.border-less-next-btn:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+.buttons > button,
+.buttons > button:active,
+.buttons > button:focus {
+    display: block;
+    margin: $button-margin;
+    margin-top: $margin-top-10;
+    background-color: $primary-background-color;
+    border-color: $primary-color;
+    color: $primary-color;
+    width:$button-width;
+    box-shadow: none;
+    border-radius: $botton-border-radious;
+}
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+.buttons > button:disabled {
+    color: $disabled-btn-color;
+    border-color: $disabled-btn-border-color;
+}
+.buttons > .btn-link {
+    display: block;
+    margin:$button-margin;
+    margin-top: $margin-top-10;
+    background-color: $primary-background-color;
+    border: none !important;
+    color: $primary-color;
+    width: $button-width;
+    text-decoration: none;
+}
+
+#displayStaticModal{
+    background-color: $modal-backdrop-background;
+    // opacity: 0.5;
+}

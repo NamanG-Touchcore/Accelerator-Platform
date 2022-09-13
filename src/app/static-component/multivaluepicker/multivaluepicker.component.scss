@@ -1,0 +1,16 @@
+
+@import '../../../variable.scss';
+.question{
+  @extend .question;
+}
+.border-less-select{
+  border: none;
+  border-bottom: 1px solid $input-border-color;
+  min-width: $input-min-length;
+  max-width: $width-100;
+}
+.border-less-select:focus{
+  border: none;
+  border-bottom: 1px solid $input-border-color;
+  box-shadow: none;
+}

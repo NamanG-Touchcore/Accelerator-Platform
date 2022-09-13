@@ -1,0 +1,30 @@
+@import '../../../variable.scss';
+
+.survey-header {
+    padding: $static-survey-header-padding;
+    background-color: $survey-header-background-color;
+    box-shadow: $survey-header-box-shadow;
+}
+.back-icon{
+    font-size: $back-icon-font-size;
+    color: $icon-color;
+    margin-left: $icon-margin;
+    margin-top:  $top-margin-8;
+    cursor: pointer;
+}
+.cancel-button{
+    color: $primary-color; 
+    font-size: $cancel-button-font-size !important;
+    margin-right: $cancel-button-padding-right;
+    margin-top: $top-margin-8;
+    cursor: pointer;
+}
+
+#static-header{
+    top: 0;
+    position: fixed;
+    width: $width-100+1%;
+    z-index: 9999999;
+    left: 0;
+}
+

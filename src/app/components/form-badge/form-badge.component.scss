@@ -1,0 +1,14 @@
+@import '../../../variable.scss';
+
+.badge-pill {
+    background-color: $badge-pill-background;
+    border-radius: $badge-pill-border-radius;
+    // margin: $badge-pill-margin;
+    color: $primary-background-color;
+    letter-spacing:$badge-pill-letter-spacing;
+    padding: $badge-pill-padding;
+    height: $badge-pill-height;
+    transform: $badge-pill-transform;
+    line-height: $badge-pill-line-height;
+    font-size: $badge-pill-font-size;
+}

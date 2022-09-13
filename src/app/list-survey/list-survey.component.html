@@ -1,0 +1,176 @@
+<div class="survey-top-margin">
+  <div class="main-survey-list-section col-md-12">
+    <div class="section-display">
+      <div *ngIf="surveyResponses" class="survey-display">
+        <h1 *ngIf="upcomingSurveys.length > 0" class="mb-4"><span class="survey-list-upcoming-section-title">{{
+            'content.upcomingSurvey' | translate }}</span>
+        </h1>
+        <div *ngFor="let item of upcomingSurveys" class="listed-surveys">
+          <div class="d-flex justify-content-md-start">
+            <div *ngIf="item === upcomingSurveys[0]; else verticalLine" class="vertical-line-for-first-element">
+            </div>
+            <ng-template #verticalLine>
+              <div class="vertical-line">
+              </div>
+            </ng-template>
+            <img class="dotted-circle-for-upcoming-surveys" src="../../assets/images/dotted-circle.svg" />
+            <h5 class="section-title-grey ml-3">
+              <a>{{formService.readSurveyFromJson(item.survey.internalIdentifier, item.survey.initiatingEventInterval,
+                item.responseOrdinal)}}</a><br>
+              <span *ngIf="item.openDate !== null">{{ 'content.availableOn' | translate }} {{item.openDate |
+                date}}</span>
+            </h5>
+          </div>
+        </div>
+        <h1 *ngIf="openNowSurveys.length > 0" class="mb-4">
+          <div *ngIf="upcomingSurveys.length > 0 && openNowSurveys.length > 0" class="vertical-line-between-section">
+          </div>
+          <span class="survey-list-section-title">{{
+            'content.nowSurvey' | translate }}</span>
+        </h1>
+        <div *ngFor="let item of openNowSurveys" class="listed-surveys">
+          <div class="d-flex justify-content-md-start">
+            <div *ngIf="item === openNowSurveys[0]; else verticalLine" class="vertical-line-for-first-element">
+            </div>
+            <ng-template #verticalLine>
+              <div class="vertical-line">
+              </div>
+            </ng-template>
+            <div>
+              <app-form-progress-bar [percentage]="getSurveyProgressPercentage(item)" [sectionId]="item.id"
+                *ngIf="isSurveyMediumMobile(item); else showWebOnNowSection"></app-form-progress-bar>
+              <ng-template #showWebOnNowSection>
+                <div class="web-icon-for-now-section">
+                  <svg height="42" width="40">
+                    <circle cx="20" cy="19" r="18" stroke="#0387c6" stroke-width="2" fill="transparent" />
+                  </svg>
+                  <i class="fas fa-desktop"></i>
+                </div>
+              </ng-template>
+            </div>
+            <h5 *ngIf="isSurveyMediumMobile(item); else showGreyTitle" class="section-title-blue mt-0 ml-3">
+              <a (click)="onSurveyClick(item,'openNow')">{{formService.readSurveyFromJson(item.survey.internalIdentifier,
+                item.survey.initiatingEventInterval, item.responseOrdinal)}}</a><br>
+              <span *ngIf="getSurveyExpiryText(item) && !expiryDate"
+                [ngClass]="getSurveyExpiryTextClassName()"><span><span>!</span></span>&nbsp;
+                {{getSurveyExpiryText(item)}}</span>
+              <span *ngIf="expiryDate"
+                [ngClass]="getSurveyExpiryTextClassName()"><span><span>!</span></span>&nbsp;{{'content.expiredOn' |
+                translate }} {{expiryDate | date}}</span>
+            </h5>
+            <ng-template #showGreyTitle>
+              <h5 class="section-title-light-blue mt-2">
+                <a class="ml-4 pl-3">{{formService.readSurveyFromJson(item.survey.internalIdentifier,
+                  item.survey.initiatingEventInterval,
+                  item.responseOrdinal)}}</a>
+              </h5>
+            </ng-template>
+
+          </div>
+        </div>
+        <div>
+          <h1 *ngIf="pastSurveys.length > 0" class="mb-4">
+            <div
+              *ngIf="(openNowSurveys.length > 0 && pastSurveys.length > 0) || (upcomingSurveys.length > 0 && pastSurveys.length > 0)"
+              class="vertical-line-between-section">
+            </div>
+            <span class="survey-list-past-section-title">{{
+              'content.pastSurvey' | translate }}</span>
+          </h1>
+        </div>
+        <div *ngFor="let item of pastSurveys" class="listed-surveys">
+          <div *ngIf="item.survey.displayName" [ngClass]="{'survey-disabled':isSurveyStatusReopened(item)}">
+            <div class="d-flex justify-content-md-start">
+              <div *ngIf="item === pastSurveys[0]; else verticalLine" class="vertical-line-for-first-element">
+              </div>
+              <ng-template #verticalLine>
+                <div class="vertical-line">
+                </div>
+              </ng-template>
+              <svg class="mt-2" height="50" width="40" *ngIf="!isSurveyStatusReopened(item)">
+                <circle cx="20" cy="19" r="18" stroke="#0387c6" stroke-width="2" fill="transparent" />
+              </svg>
+              <svg class="mt-2" height="50" width="40" *ngIf="isSurveyStatusReopened(item)">
+                <circle cx="20" cy="19" r="18" stroke="gray" stroke-width="2" fill="transparent" />
+              </svg>
+              <div class="conditional mt-2" *ngIf="!isSurveyStatusReopened(item)">
+                <svg *ngIf="isSurveyMediumMobile(item); else showWeb " height="50" width="34">
+                  <circle cx="20" cy="19" r="14" fill="#0387c6" />
+                </svg>
+
+                <ng-template #showWeb>
+                  <svg height="50" width="34">
+                    <circle cx="20" cy="19" r="14" fill="#0387c6" />
+                  </svg>
+                </ng-template>
+              </div>
+
+              <div class="conditional mt-2" *ngIf="isSurveyStatusReopened(item)">
+                <svg *ngIf="isSurveyMediumMobile(item); else showWeb " height="50" width="34">
+                  <circle cx="20" cy="19" r="14" fill="gray" />
+                </svg>
+
+                <ng-template #showWeb>
+                  <svg height="50" width="34">
+                    <circle cx="20" cy="19" r="14" fill="gray" />
+                  </svg>
+                </ng-template>
+              </div>
+              <h5 class="section-title-light-blue">
+                <div class="row mt-1">
+                  <div class="title-section col-8">
+                    <a (click)="onSurveyClick(item,'past')">{{formService.readSurveyFromJson(item.survey.internalIdentifier,
+                      item.survey.initiatingEventInterval, item.responseOrdinal)}}</a><br>
+
+                  </div>
+                  <div class="col-4 d-flex justify-content-end">
+                    <app-form-badge class="ml-2"></app-form-badge>
+                  </div>
+                  <div class="row" *ngIf="surveyRequiresSignature(item.id)">
+                    <div class="col-10">
+                      <span *ngIf="item.completionDate !== null && isSurveyMediumMobile(item)">{{ 'content.completedOn'
+                        |
+                        translate }}
+                        {{item.completionDate|
+                        date}}</span>
+
+                      <span *ngIf="item.completionDate !== null && !isSurveyMediumMobile(item)">{{
+                        'content.completedFromWebOn' | translate }}
+                        {{item.completionDate|
+                        date}}</span>
+                    </div>
+                    <div class="col-2 d-flex justify-content-end">
+                      <h6 class="view-signature-info mt-1 mb-0" (click)="onInfoButtonClick()"><i
+                          class="fa-solid fa-circle-info"></i></h6>
+                    </div>
+                  </div>
+                  <div class="row" *ngIf="!surveyRequiresSignature(item.id)">
+                    <div class="col-12">
+                      <span *ngIf="item.completionDate !== null && isSurveyMediumMobile(item)">{{ 'content.completedOn'
+                        |
+                        translate }}
+                        {{item.completionDate|
+                        date}}</span>
+
+                      <span *ngIf="item.completionDate !== null && !isSurveyMediumMobile(item)">{{
+                        'content.completedFromWebOn' | translate }}
+                        {{item.completionDate|
+                        date}}</span>
+                    </div>
+                  </div>
+                </div>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div [ngStyle]="{'display':displaySignatureInfo}" class="modal" id="displayStaticModal" tabindex="-1" aria-hidden="true"
+  role="dialog">
+  <app-form-show-esignature-info *ngIf="displaySignatureInfo=='block'" (onClose)="closeModal()">
+  </app-form-show-esignature-info>
+</div>

@@ -1,0 +1,20 @@
+<div *ngIf="formInput.question" class="form-group" [formGroup]="formInput.form">
+    <div class="row">
+        <h5 class="text-center"><span *ngIf="isQuestionTextEmpty() && !isOptionalQuestion()" class="asterisk">*</span>{{formInput.question.title}}</h5>
+    </div>
+    <div class="row question w-100 inlineBlock">
+        <label class="control-label inline"><span *ngIf="!isQuestionTextEmpty() && !isOptionalQuestion()" class="asterisk">*</span>{{formInput.question.text}}</label>
+        <textarea class="border-less-input inline" [ngStyle]="{'opacity': disabled ? '0.5' : '1' }"
+            [ngClass]="{'capitalize': capitalizeWords(), 'uppercase': capitalizeCharachters() }"
+            [formControl]="formInput.form.controls[questionId]" rows="4" (blur)="onBlur()"
+            [placeholder]="getPlaceholderText()"></textarea>
+    </div>
+</div>
+
+<!--  Static modal is used for showing validation error messages -->
+<div class="modal" id="displayStaticModal" tabindex="-1" aria-hidden="true" role="dialog"
+    [ngStyle]="{'display':displayModalStyle}">
+    <app-form-static-modal [message]="getInvalidMessage()" (done)="onModalClose()" title="{{'content.invalidValue' | translate }}"
+        footer="{{'content.cancel' | translate }}">
+    </app-form-static-modal>
+</div>

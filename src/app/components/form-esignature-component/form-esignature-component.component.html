@@ -1,0 +1,54 @@
+<div class="parent-container">
+    <div id="id01" class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form #eConsentForm="ngForm" class="animate" (ngSubmit)="onSubmit()">
+                <div *ngIf="!isUserVerified; else confirmMessage">
+                    <h3>{{'content.verifyPasswordButton' | translate }}</h3>
+                    <div class="form-group mt-3">
+                        <div class="input-group">
+                            <input [type]="hide ? 'password' : 'text'" name="password" ngModel class="form-control shadow-none border-right-0" id="inputPassword"
+                                placeholder="{{'content.passwordField' | translate }}">
+                            <span class="input-group-append bg-white border-left-0">
+                                <span class="input-group-text bg-transparent border-left-0">
+                                    <i *ngIf="hide" (click)="togglePasswordView()" class="fas fa-eye"></i>
+                                    <i *ngIf="!hide" (click)="togglePasswordView()" class="fas fa-eye-slash"></i>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                
+                    <button type="submit" class="btn verify-button btn-block">
+                        <span *ngIf="!isVerifying; else loader">{{'content.verifyButton' | translate }}</span>
+                        <ng-template #loader>
+                            <div class="spinner-border" role="status">
+                                <span class="sr-only">{{'content.loading' | translate }}</span>
+                            </div>
+                        </ng-template>
+                    </button>
+                    <button type="button" (click)="cancelESignature()" class="btn text-secondary btn-block mt-3"
+                        title="{{'content.closeModal' | translate }}"><u>{{'content.doItLater' | translate }}</u></button>
+                </div>
+            </form>
+        </div>
+        <ng-template #confirmMessage>
+            <h3 class="text-center">{{'content.confirmSubmisstionButton' | translate }}</h3>
+            <h6 class="text-center mb-4">{{ 'content.submitSurvey' | translate }}</h6>
+            <button type="button" class="btn btn-primary btn-block" (click)="finalSubmit()">
+                <span *ngIf="!isVerifying; else submittingLoader">{{ 'content.submitButton' | translate }}</span>
+                <ng-template #submittingLoader>
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">{{'content.loading' | translate }}</span>
+                    </div>
+                </ng-template></button>
+            <button type="button" (click)="cancelESignature()" class="btn text-primary btn-block mt-3"
+                title="{{'content.closeModal' | translate }}"><u>{{'content.doItLater' | translate }}</u></button>
+        </ng-template>
+    </div>
+</div>
+<!--  Static modal is used for showing validation error messages -->
+<div class="modal" id="displayStaticModal" tabindex="-1" aria-hidden="true" role="dialog"
+    [ngStyle]="{'display':displayStaticModalStyle}">
+    <app-form-static-modal message="{{'content.autheticationFailed' | translate }}" (done)="onStaticModalClose()" title="{{'content.validationError' | translate }}"
+        footer="{{'content.cancel' | translate }}">
+    </app-form-static-modal>
+</div>

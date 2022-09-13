@@ -1,0 +1,14 @@
+@import '../../../variable.scss';
+#completed{
+    text-align: $text-center;
+    font-weight: $font-400;
+    font-size: $complition-icon-font-size;
+}
+
+.complete-icon {
+    font-size: $complete-icon-font-size;
+    color: $primary-color;
+    width: $width-100;
+    text-align: $text-center;
+  }
+ 

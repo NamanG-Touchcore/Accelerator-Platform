@@ -1,0 +1,59 @@
+
+@import '../../../variable.scss';
+.question{
+  @extend .question;
+  text-align: left;
+}
+    label{
+      margin-bottom: $header-content-margin-bottom;
+    }
+    .border-less-input,.border-less-input:focus,.border-less-input:hover{
+      -webkit-border: none;
+      -moz-border: none;
+      border: none;
+      -webkit-outline: none;
+      -moz-outline: none;
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    
+    .inline-block{
+      display: flex;
+      flex-direction: row;
+      flex-flow: row wrap;
+    }
+    
+    .inline{
+      display: inline;
+    }
+  
+    .input-label{
+      width: -moz-fit-content;
+      width: fit-content;
+      min-width: $input-label-length;
+    }
+  
+  div{
+    .inline-block{
+      input, input:focus, input:hover {
+        border: none;
+        outline: none;
+        flex-grow: 1;
+      }
+    }
+  }  
+  .border-less-select{
+    border: none;
+    border-bottom: 1px solid $input-border-color;
+    min-width: $input-min-length;
+    border-radius: $border-radious-0;
+    padding: $padding-0;
+    max-width: $width-100;
+  }
+  .border-less-select:focus{
+    border: none;
+    border-bottom: 1px solid $input-border-color;
+    box-shadow: none;
+  }

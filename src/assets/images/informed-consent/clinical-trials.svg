@@ -1,0 +1,16 @@
+<svg width="250" height="150" xmlns="http://www.w3.org/2000/svg">
+ <g id="Layer_1">
+  <title>Layer 1</title>
+  <g stroke="null">
+   <g stroke="null" id="svg_1">
+    <title stroke="null">Layer 1</title>
+    <ellipse stroke="#0050a6" transform="matrix(-0.337431 -0.412549 0.416693 -0.334076 -18.6589 217.308)" fill="#0050a6" stroke-width="3" cx="44.29859" cy="274.33721" id="svg_6" rx="24.5" ry="32"/>
+    <path stroke="#0050a6" fill="#0050a6" stroke-width="3" d="m68.49285,100.68274l94.93083,-78.86427l16.57297,19.55449l-94.93083,78.86427l-16.57297,-19.55449z" id="svg_5"/>
+    <line stroke="#0050a6" fill="none" stroke-width="8" x1="146.39025" y1="26.69419" x2="173.19944" y2="55.89103" id="svg_4"/>
+    <path stroke="#0050a6" fill="#0050a6" stroke-width="3" d="m180.01418,96.56985c-4.31079,22.26188 -21.20059,0 0,-28.62242c21.20059,28.62242 4.31079,50.8843 0,28.62242z" id="svg_3"/>
+    <ellipse stroke="#0050a6" fill="#0050a6" stroke-width="3" cx="180.16983" cy="97.03203" id="svg_2" rx="10.72368" ry="13.53672"/>
+   </g>
+  </g>
+ </g>
+
+</svg>

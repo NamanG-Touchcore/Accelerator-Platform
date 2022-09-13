@@ -1,0 +1,31 @@
+<div [formGroup]="formInput.form">
+    <div [ngSwitch]="formInput.question.answerFormat.type">
+        <div *ngSwitchCase="'textChoice'">
+            <app-form-textchoice [formInput]="formInput">
+            </app-form-textchoice>
+        </div>
+        <!-- TODO Add Component for Text Scale -->
+        <div *ngSwitchCase="'textScale'">
+            <app-form-textscale [formInput]="formInput">
+            </app-form-textscale>
+        </div>
+        <div *ngSwitchCase="'textAnswer'">
+            <app-form-textbox [formInput]="formInput"></app-form-textbox>
+        </div>
+        <div *ngSwitchCase="'valuePicker'">
+            <app-form-select [formInput]="formInput"></app-form-select>
+        </div>
+        <div *ngSwitchCase="'languagePicker'">
+            <app-form-select [formInput]="formInput"></app-form-select>
+        </div>
+        <div *ngSwitchCase="'countryPicker'">
+            <app-form-select [formInput]="formInput"></app-form-select>
+        </div>
+        <div *ngSwitchCase="'date'">
+            <app-form-date [formInput]="formInput"></app-form-date>
+        </div>
+        <div *ngSwitchCase="'file'">
+            <app-form-file-upload [formInput]="formInput"></app-form-file-upload>
+        </div>
+    </div>
+</div>

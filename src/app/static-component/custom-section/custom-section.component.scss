@@ -1,0 +1,12 @@
+@import '../../../variable.scss';
+
+a {
+    color: $primary-color !important;
+    text-decoration: none !important;
+    text-align: center !important;
+}
+
+img {
+    margin: $img-margin;
+    display: block;
+}

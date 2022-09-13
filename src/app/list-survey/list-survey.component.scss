@@ -1,0 +1,121 @@
+@import "../../variable.scss";
+.survey-display {
+    margin-top: $survey-display-margin-top;
+}
+.listed-surveys {
+    margin-left: $listed-surveys-margin-left;
+}
+.survey-list-past-section-title {
+    color: $section-title-light-blue;
+    font-weight: $font-500;
+    padding-bottom: $section-title-padding-bottom;
+}
+
+.survey-list-upcoming-section-title {
+    color: $section-title-grey;
+    font-weight: $font-500;
+    padding-bottom: $section-title-padding-bottom;
+}
+
+.survey-list-section-title {
+    color: $section-title-color;
+    font-weight: $font-500;
+    padding-bottom: $section-title-padding-bottom;
+}
+
+.section-title-light-blue {
+    color: $section-title-light-blue;
+    cursor: pointer;
+    position: absolute;
+}
+.section-title-grey {
+    color: $section-title-grey;
+    cursor: pointer;
+}
+.section-title-light-blue > div > div > div > span {
+    font-size: $section-title-grey-span;
+}
+.section-title-light-blue {
+    width: 70%;
+}
+.section-title-light-blue > div,
+.section-title-light-blue > span {
+    position: relative;
+    left: 2.5rem;
+}
+.section-title-grey > span {
+    font-size: $section-title-grey-span;
+}
+.section-title-blue > span {
+    bottom: 10px;
+    font-size: $section-title-grey-span;
+    color: $section-title-grey;
+}
+.vertical-line-between-section {
+    margin-left: 1.3rem;
+    border-left: 1px solid $primary-color;
+    height: $vertical-line-between-section-height;
+    // margin-top:$vertical-line-between-section-margin-top;
+    // margin-right: $vertical-line-margin-right;
+    margin-top: -1.4rem;
+    margin-right: -20px;
+    margin-bottom: 0.3rem;
+}
+
+.vertical-line-for-first-element {
+    margin-left: $vertical-line-margin-left;
+    border-left: 1px solid $primary-color;
+    height: $vertical-line-between-section-height;
+    margin-bottom: $vertical-line-for-first-element-margin-bottom;
+    margin-top: $vertical-line-for-first-element-margin-top;
+    margin-right: $vertical-line-margin-right;
+}
+
+.conditional {
+    margin-left: $conditional-margin-left;
+    width: $conditional-width;
+    height: $conditional-height;
+}
+
+.conditional > i {
+    color: $section-title-light-blue;
+    margin-left: $conditional-i-margin-left;
+    margin-top: $conditional-i-margin-left;
+}
+
+.dotted-circle-for-upcoming-surveys {
+    width: $dotted-circle-for-upcoming-surveys-width;
+    height: $dotted-circle-for-upcoming-surveys-height;
+}
+
+.web-icon-for-now-section > i {
+    color: $section-title-light-blue;
+    margin-left: $web-icon-for-now-section-margin-left;
+    margin-right: $web-icon-for-now-section-margin-right;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1000000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.view-signature-info {
+    color: #044f90 !important;
+}
+
+.fa-circle-info {
+    font-size: 1.25rem;
+}
+
+.survey-disabled * {
+    color: gray;
+}

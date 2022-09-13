@@ -1,0 +1,15 @@
+<div *ngIf="legalAgreement.length > 0" style="margin-top:'30px'">
+    <h2 style="text-align: center;">{{ 'content.updateInTermsOfUseAndPrivacyPolicy' | translate }}</h2>
+    <h3 *ngIf="getCurrentLegalStatement().legalTypeInternalIdentifier === 'LEGALSTATEMENTTYPE.PP'">{{ 'content.privacyPolicy' | translate }} </h3>
+    <h3 *ngIf="getCurrentLegalStatement().legalTypeInternalIdentifier == 'LEGALSTATEMENTTYPE.TC'">{{ 'content.termsOfUse' | translate }}</h3>
+    <div [innerHtml]="getCurrentLegalStatement().legalStatementText"></div>
+    <div>
+        <input type ="checkbox" [(ngModel)]="checked"> {{ 'content.iAcceptTermsOfUseAndPrivacyPolicy' | translate }}
+    </div>
+    <div>
+        <button [disabled]="!checked" *ngIf="index < legalAgreement.length-1" (click)="onNext()">{{ 'content.nextButton' | translate }}</button>
+    </div>
+    <div>
+        <button [disabled]="!checked" *ngIf="legalAgreement.length-1 === index" (click)="onSubmitLegalAgreement()">{{ 'content.submitButton' | translate }}</button>
+    </div>
+</div>

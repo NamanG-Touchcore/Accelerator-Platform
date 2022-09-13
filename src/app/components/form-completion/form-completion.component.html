@@ -1,0 +1,7 @@
+<div *ngIf="question">
+    <div class="mt-5" id="completed">
+        <p>{{question.title}}</p>
+        <div class="h4" [innerHtml]="question.text"></div>
+    </div>
+    <app-form-footer></app-form-footer>
+</div>

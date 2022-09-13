@@ -1,0 +1,31 @@
+<div [formGroup]="formInput.form" class="parent-class">
+    <div *ngIf="formInput.question.step==='question'">
+        <div [ngSwitch]="formInput.question.answerFormat.type">
+            <div *ngSwitchCase="'multipleValuePicker'">
+                <app-form-multiple-value-picker [formInput]="getFormInputModel(formInput.question,formInput.form)">
+                </app-form-multiple-value-picker>
+            </div>
+            <div *ngSwitchDefault>
+                <app-form-question-renderer [formInput]="getFormInputModel(formInput.question,formInput.form)">
+                </app-form-question-renderer>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="formInput.question.step==='form'">
+        <h5 class="px-3 mt-3 mb-3 text-center">{{formInput.question.title}}</h5>
+        <div class="question row">{{formInput.question.text}}</div>
+        <div *ngFor="let item of formInput.question.formItems">
+            <div [ngSwitch]="item.answerFormat.type">
+                <div *ngSwitchCase="'multipleValuePicker'">
+                    <app-form-multiple-value-picker
+                        [formInput]="getFormInputModel(item,formInput.form,formInput.question)">
+                    </app-form-multiple-value-picker>
+                </div>
+                <div *ngSwitchDefault>
+                    <app-form-question-renderer [formInput]="getFormInputModel(item,formInput.form,formInput.question)">
+                    </app-form-question-renderer>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

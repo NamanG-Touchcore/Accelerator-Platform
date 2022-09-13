@@ -1,0 +1,19 @@
+@import '../../../variable.scss';
+.modal-footer {
+    justify-content: center !important;
+}
+
+.spinner-border{
+    align-self: center;
+}
+
+.parent-container{
+    position: fixed;
+    width: $width-100;
+    top: $top-0;
+    z-index: $loader-modal-parent-container-z-index;
+    bottom: $bottom-0;
+    left: $left-0;
+    right: $right-0;
+    background: linear-gradient($modal-backdrop-background, $modal-backdrop-background);
+}

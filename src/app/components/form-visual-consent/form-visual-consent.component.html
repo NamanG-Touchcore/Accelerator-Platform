@@ -1,0 +1,12 @@
+<div *ngIf="!hyperlinkClicked">
+    <img *ngIf="section.sectionImage && section.sectionImage.src && section.sectionImage.position==='top'"
+        [src]="section.sectionImage.src">
+    <h3 class="text-center mt-3 mb-3">{{section.sectionTitle }}</h3>
+    <p class="text-center mt-3 mb-3">{{section.sectionSummary}}</p>
+    <a (click)="onLinkClick()" class="mt-3 mb-3 d-block">{{section.learnMoreButtonTitle}}</a>
+    <div *ngIf="!section.learnMoreButtonTitle" [innerHTML]="htmlContent"></div>
+    <img *ngIf="section.sectionImage && section.sectionImage.position==='bottom'" [src]="section.sectionImage.src">
+</div>
+<div *ngIf="hyperlinkClicked">
+    <div [innerHtml]="htmlContent"></div>
+</div>

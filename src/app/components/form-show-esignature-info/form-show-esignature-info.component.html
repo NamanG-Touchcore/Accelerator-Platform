@@ -1,0 +1,46 @@
+<div class="parent-container" *ngIf="this.signature">
+	<div id=" id01" class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="container animate">
+				<button type="button" (click)="onCloseClick()" class="close padding-top"
+					title="Close Modal">&times;</button>
+				<h2 class="title text-center pb-2">
+					{{ 'content.signatureDetails.label' | translate }}
+				</h2>
+				<h5 class="text-left mt-3" *ngIf=" this.signature.signatureDetails; else noUserDetailsFound">
+					<div class="row" *ngIf="this.configuration.userName">
+						<div class="text-center">
+							<p class="font-weight-bold pb-0 mb-0">{{ 'content.signatureDetails.signedBy' | translate }}:</p>
+							<p class="font-weight-normal break-word">
+								{{this.signature.signatureDetails.signedByUserAccount.username}}
+							</p>
+						</div>
+					</div>
+					<div class="row" *ngIf="this.configuration.signedOnDate">
+						<div class="text-center">
+							<p class="font-weight-bold mb-0 pb-0">{{ 'content.signatureDetails.DateTime' | translate }}:</p>
+							<p class="font-weight-normal">
+								{{this.signedDate | date}} {{ 'content.signatureDetails.signedAt' | translate }}
+								{{this.signedTime}}
+							</p>
+						</div>
+					</div>
+				</h5>
+				<ng-template #noUserDetailsFound>
+					<div class="row">
+						<p class="text-center">
+							<span class="font-weight-bold">{{ 'content.signatureDetails.signedBy' | translate }}:</span> <span
+								class="text-danger">{{ 'content.signatureDetails.notApplicable' | translate }}</span>
+						</p>
+					</div>
+					<div class="row">
+						<p class="text-center">
+							<span class="font-weight-bold">{{ 'content.signatureDetails.DateTime' | translate }}:</span> <span
+								class="text-danger">{{ 'content.signatureDetails.notApplicable' | translate }}</span>
+						</p>
+					</div>
+				</ng-template>
+			</div>
+		</div>
+	</div>
+</div>

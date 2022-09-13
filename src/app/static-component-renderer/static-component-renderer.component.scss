@@ -1,0 +1,56 @@
+@import '../../variable.scss';
+
+.buttons>button,.buttons>button:active,.buttons>button:focus {
+    display: block;
+    margin:$button-margin !important;
+    margin-top: $margin-top-10;
+    background-color: $button-background-color !important;
+    border: 1px solid  $primary-color !important;
+    color: $primary-border-color !important;
+    width: $button-width;
+    margin: 0px;
+    text-decoration: none !important;
+}
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+.buttons>button:disabled {
+    color: $disabled-btn-color;
+    border-color: $disabled-btn-border-color;
+}
+.buttons>.btn-link {
+    display: block;
+    margin:$button-margin;
+    margin-top: $margin-top-10;
+    background-color: $primary-background-color;
+    border: none !important;
+    color: $primary-color;
+    width: $button-width;
+    text-decoration: none;
+}
+.fixed-bottom{
+    background: $primary-background-color;
+}
+.mt-top{
+    margin-top: $mt-top;
+}
+button,button:active,button:focus,button:hover {
+    display: block;
+    margin: $button-margin;
+    margin-top: $margin-top-10;
+    background-color: $primary-background-color;
+    border-color: $primary-color;
+    color: $primary-color;
+    width: $button-width;
+    box-shadow: none;
+}
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+button:disabled {
+    color:$disabled-btn-color !important;
+    border-color: $disabled-btn-border-color !important;
+    background-color: $primary-background-color !important;
+}
+
+

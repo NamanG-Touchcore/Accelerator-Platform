@@ -1,0 +1,43 @@
+<div *ngIf="surveyResponse">
+    <span class="ribbon-badge" *ngIf="formService.isSurveyReadOnlyMode()">
+        <app-form-badge></app-form-badge>
+    </span>
+
+    <div class="main-survey-list-section">
+        <div class="mt-5 section-display text-center">
+            <!-- <p *ngIf="getSurveyExpiryText() && !expiryDate"  class="mt-3 mb-2 text-center expiry-text-alert"><span [ngClass]="getSurveyExpiryTextClassName()"><span><span>!</span></span>&nbsp;{{getSurveyExpiryText()}}</span></p>
+            <p *ngIf="expiryDate"  class="mt-3 mb-2 text-center expiry-text-alert"><span [ngClass]="getSurveyExpiryTextClassName()"><span><span>!</span></span>&nbsp;{{'content.expiredOn' | translate }} {{expiryDate | date}}</span></p> -->
+           
+           <h1 class="mt-1 text-center "><span class="section-title">&nbsp;  {{formService.readSurveyFromJson(surveyResponse.survey.internalIdentifier, surveyResponse.survey.initiatingEventInterval, surveyResponse.responseOrdinal)}}
+                    &nbsp;</span>
+            </h1>
+            <span *ngIf="formService.isSurveyReadOnlyMode()" class="response-message">{{ 'sections.surveyResponseMessage' | translate }}</span>
+            <div class="empty-div">
+            </div>
+           
+        </div>
+        <div class="survey-list">
+            <div class="scrollable-list">
+            <div *ngFor="let section of surveyResponse.sectionResponses" class="col-md-8 justify-content-md-center">
+                <div class="d-flex justify-content-md-start ml-3 mt-1 ">
+                    <div *ngIf="section === surveyResponse.sectionResponses[0]; else verticalLine"
+                        class="vertical-line-for-first-element">
+                    </div>
+                    <ng-template #verticalLine>
+                        <div class="vertical-line">
+                        </div>
+                    </ng-template>
+                    <div class="progressBar mt-1">
+                        <!-- <span>{{calculateSectionProgressPercentage(section.id)}}</span> -->
+                        <app-form-progress-bar [percentage]="calculateSectionProgressPercentage(section)"
+                            [sectionId]="section.id">
+                        </app-form-progress-bar>
+                    </div>
+                    <h5 class=" section-title-blue mt-2 ml-3"><a
+                            (click)="onSectionClick(section)">{{formService.readSectionFromJson(section.section.internalIdentifier)}}</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

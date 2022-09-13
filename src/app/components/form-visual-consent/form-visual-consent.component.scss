@@ -1,0 +1,18 @@
+@import '../../../variable.scss';
+a {
+    color: $primary-color !important;
+    text-decoration: none !important;
+    text-align: $text-center !important;
+    cursor: pointer;
+}
+
+img {
+    margin: $button-margin;
+    display: block;
+    width: $img-width;
+    max-height: $img-max-height;
+}
+h3{
+    color: #212529;
+    font-weight: bold !important;
+}

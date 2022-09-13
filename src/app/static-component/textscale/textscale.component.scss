@@ -1,0 +1,179 @@
+@import '../../../variable.scss';
+.question{
+    @extend .question;
+    text-align: center;
+}
+.form-check-input{
+    margin-right: $margin-right-10;
+}
+
+div{
+    .scale-container{
+        padding: $scale-container-padding;
+        label:nth-child(5){
+            display: block;
+            margin-bottom: $scale-container-label-bottom-margin;
+            cursor: pointer;
+            height: auto;
+            padding-top: $padding-top-0;
+            padding-bottom: $scale-container-label-bottom-padding;
+            border-left: 0px solid transparent;
+             
+        }
+        label{
+            display: block;
+            margin-bottom: $scale-container-label-bottom-margin;
+            cursor: pointer;
+            height: auto;
+            padding-top: $padding-top-0;
+            padding-bottom: $scale-container-label-bottom-padding;
+            border-left: 1px solid $border-left-color;
+            span {
+                display: inline-block;
+                vertical-align: top;
+                line-height: $scale-container-span-line-height;
+                font-size: $scale-container-span-font-size;
+                font-weight: $font-500;
+                margin-left: $scale-container-span-margin-left;
+                margin-top: $scale-container-span-margin-top;
+            }
+            input{
+                visibility: hidden;
+            }
+            input + i {
+                visibility: hidden;
+                margin-left: $scale-i-margin-left;
+                margin-right: $scale-i-margin-right;
+                float: left;
+                margin-top: $scale-i-margin-top !important;
+                font-size: $scale-font-size;
+                color: $primary-background-color;
+                box-shadow: rgb(0 0 0 / 12%) 0px 2px 1px, rgb(0 0 0 / 20%) 0px 4px 3px;
+                border-radius: $border-radious-30;
+                border: 1px solid $secondary-background-color;
+                background: $primary-background-color;
+                position: absolute;
+                z-index: $scale-i-z-index;
+            }
+            input:checked + i + span{
+                color: $primary-color;
+            }
+            input:checked + i {
+                visibility: visible;
+            }
+        }
+    }
+} 
+.input-mark{
+    left: $input-mark-left;
+    position: absolute;
+    z-index: $input-mark-z-index;
+    margin-top: $scale-i-margin-top;
+}
+@media screen and (max-width:480px) {
+    div{
+        .scale-container{
+            label {
+                display: block;
+                
+                margin-bottom: $scale-container-label-bottom-margin;
+                cursor: pointer;
+                height: auto;
+                padding-top: $padding-0;
+                padding-bottom: $scale-container-label-bottom-padding-mobile;
+                span {
+                    width: $modal-dialog-width;
+                }
+                input + i {
+                    margin-top: $input-i-margin-top-0;
+                }
+            } 
+        }
+    } 
+}
+
+
+/*Range Slider*/
+.slide-container {
+   
+    margin-left: $slide-container-margin-left;
+    margin-top: $slide-container-margin-top;
+  }
+  .ul-labels{
+    line-height: $ul-labels-margin-left;
+    margin-left: $ul-labels-line-height;
+    list-style: none;
+    padding-left: $ul-labels-padding-left;
+  }
+  .ul-labels-left{
+    line-height: $ul-labels-margin-left;
+    list-style: none;
+    padding-left: $ul-labels-padding-left;
+  margin-left: $ul-labels-left-padding-left;
+  }
+  .ul-labels span{
+      padding-left: $ul-labels-span-padding-left;
+  }
+  input[type=range] {
+    -webkit-appearance: none;
+    height: $input-range-width;
+    width: $input-range-height;
+    -webkit-transform: rotate(90deg); 
+    background-color: transparent;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: $webkit-slider-width;
+    height:$webkit-slider-height;
+    background: $border-black;
+    border: none;
+    border-radius: $border-radious-0;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: $webkit-slider-thumb-height;
+    width: $webkit-slider-thumb-width;
+    border-radius:$webkit-slider-thumb-border-radious ;
+    background: $primary-background-color !important;
+    color: $primary-background-color;
+    box-shadow: rgb(0 0 0 / 12%) 1px 3px 4px, rgb(0 0 0 / 20%) 1px 1px 6px;
+    margin-top: $slider-thumb-margin-top;
+    margin-left: $slider-thumb-margin-left;
+   
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: $border-black;
+  }
+
+input[type=range]::-moz-range-track {
+    width: $moz-slider-width;
+    height:$webkit-slider-height;
+    background: $border-black;
+    border: none;
+    border-radius: $border-radious-0;
+}
+
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: $moz-slider-thumb-height;
+    width: $moz-slider-thumb-width;
+    border-radius: $width-100;
+    background: $primary-background-color !important;
+    color: $primary-background-color;
+    box-shadow: rgb(0 0 0 / 12%) 1px 3px 4px, rgb(0 0 0 / 20%) 1px 1px 6px;
+    margin-top: $slider-thumb-margin-top;
+    margin-left: $slider-thumb-margin-left;
+}
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring{
+    outline: none;
+}
+
+input[type=range]:focus::-moz-range-track {
+    background: $border-black;
+}

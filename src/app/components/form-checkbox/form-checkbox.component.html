@@ -1,0 +1,14 @@
+<div *ngIf="formInput.question" class="form-group" [formGroup]="formInput.form">
+    <h3 class="text-center mt-3 mb-3"><span *ngIf="isQuestionTextEmpty() && !isOptionalQuestion()" class="asterisk">*</span>{{formInput.question.title}}</h3>
+    <div class="question row"><span *ngIf="!isQuestionTextEmpty() && !isOptionalQuestion()" class="asterisk">*</span>{{formInput.question.text}}
+    </div>
+    <div class="check-box-container">
+        <label [formArrayName]="questionId" [ngStyle]="{'opacity': disabled ? '0.5' : '1' }"
+            *ngFor="let opt of formInput.question.answerFormat.textChoices; let textChoiceIndex=index">
+            <input [formControlName]="textChoiceIndex" [checked]="isChecked(opt.value)" type="checkbox"
+                (change)="onCheckboxChanged($event,opt)" [value]="opt.value" />
+            <i class="fa fa-check"></i>
+            <span>{{opt.text}}</span>
+        </label>
+    </div>
+</div>

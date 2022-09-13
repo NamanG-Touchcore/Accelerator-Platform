@@ -1,0 +1,92 @@
+<div class="mt-5 profile-display text-center" *ngIf="subjectDetails">
+  <h1 class="mt-5 text-center"><span class="subject-name">&nbsp; {{subjectDetails.firstName | titlecase}} {{
+      subjectDetails.lastName | titlecase}} &nbsp;</span></h1>
+  <h6 class="mt-1 mb-3 text-center subject-id text-grey"> {{subjectDetails.subjectIdentifier}}</h6>
+
+  <div class="mt-5 container">
+    <h6 class="text-center text-grey">{{ 'subjectProfile.Settings' | translate }}</h6>
+
+
+    <!--<div class="row pt-1 pointer-cursor border-line">
+      <div class="p-2 col d-flex justify-content-start">
+        <h5>{{ 'subjectProfile.notifications' | translate }}</h5>
+      </div>
+      <div class="p-2 col d-flex justify-content-end">
+        <label class="switch" (click)="onToggle()">
+          <input disabled [checked]="getNotificationToggleStatus()" type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>-->
+
+    <!--<div class="row pt-1 pointer-cursor border-line">
+
+      <!-- <div class="p-2 col-8 d-flex justify-content-start">
+        <h5 class="mt-2">{{'content.changeLanguage' | translate }}</h5>
+      </div> -->
+
+      <!-- <div class="p-2 col-4 d-flex justify-content-end">
+        <label class="select" for="slct">
+          <select id="slct" (change)="translate.use($event.target.value);
+          selected($event.target.value)">
+            <option [value]="language.code" *ngFor="let language of availableLanguages"
+              [selected]="preferredLanguage === language.code">
+              {{language.language}}
+            </option>
+          </select>
+          <svg>
+            <use xlink:href="#select-arrow-down"></use>
+          </svg>
+        </label>
+        <svg class="sprites">
+          <symbol id="select-arrow-down" viewbox="0 0 10 6">
+            <polyline points="1 1 5 5 9 1"></polyline>
+          </symbol>
+        </svg>
+      </div>
+    </div>-->
+
+    <div class="row pt-1 pointer-cursor border-line" (click)="showDeleteAccountModal()">
+      <!-- <div class="p-2 col-1 d-flex justify-content-end">
+        <i class="fa-solid fa-trash-can"></i>
+      </div> -->
+      <div class="p-2 col-9 border-bottom d-flex justify-content-start">
+        <h5 class="mt-1">{{'subjectProfile.deleteAccount' | translate }}</h5>
+      </div>
+      <!-- <div class="col-1">
+      </div> -->
+      <div class="p-2 col-3 border-bottom d-flex justify-content-end">
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<footer class="fixed-bottom">
+  <div class="buttons mt-5 mb-5 container">
+    <button class="btn btn-primary col-md-8 justify-content-center mt-5" (click)="onSignOut()">{{
+      'subjectProfile.signOut' | translate }}</button>
+    <br>
+    <p class="text-grey text-center mt-2"><img class="loader-icon" src="../../assets/images/blue-loader-icon.png" />{{
+      'subjectProfile.poweredBy' | translate }}<sup class="tm-font">TM</sup></p>
+    <div class="public-links-section">
+      <p>
+        <a [href]="getPrivacyPolicyLink()">{{
+          'subjectProfile.privacyPolicy' | translate }}</a>
+      </p>
+      <p>
+        <a [href]="getTermsOfUseLink()">{{
+          'subjectProfile.termsOfUse' | translate }}</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<div [ngStyle]="{'display':displayDeleteAccountModal}" class="modal" id="displayStaticModal" tabindex="-1"
+  aria-hidden="true" role="dialog">
+  <app-form-action-modal continueButtonText="{{'content.delete' | translate }}" cancelButtonText="{{'content.cancel' | translate }}" messageTitle="{{'subjectProfile.deleteAccount' | translate }}"
+    messageBody="{{'content.deleteAccountText' | translate }}"
+    (onContinue)="onSignOut()" (onCancel)="closeDeleteAccountModal()"></app-form-action-modal>
+</div>

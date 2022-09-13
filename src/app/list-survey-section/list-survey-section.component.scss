@@ -1,0 +1,66 @@
+@import '../../variable.scss';
+.section-display {
+   @extend .section-display;
+    position: relative;
+    top: 5px;
+    background: $primary-background-color;
+    width: $width-100;
+    left: $left-0;
+    z-index: $section-display-z-index;
+    left: $left-0;
+}
+.section-title{
+    color: $section-title-color;
+    font-weight: $font-700;
+    border-bottom: 1px solid $section-title-border-color;
+    padding-bottom: $section-title-padding-bottom;
+    line-height: $section-title-line-height;
+}
+.section-title-blue{
+    @extend .section-title-blue;
+    font-size: $section-title-font-size;
+}
+.vertical-line{
+    margin-left: $vertical-line-margin-left;
+    border-left: 1px solid $primary-color;
+    height: $section-vertical-line-height;
+    margin-top: -1.55rem;
+    margin-bottom: $vertical-line-margin-bottom;
+    margin-right: $vertical-line-margin-right;
+    z-index: $vertical-line-z-index;
+}
+.response-message{
+    color: $section-title-grey;
+    font-size: $response-message-font-size;
+}
+.vertical-line-for-first-element{
+    margin-left:$vertical-line-margin-left;
+    height: $vertical-line-between-section-height;
+    margin-bottom: $vertical-line-for-first-element-margin-bottom;
+    margin-top:$vertical-line-for-first-element-margin-top;
+    margin-right: $vertical-line-margin-right;
+}
+.progress-bar{
+    max-height: $progress-bar-max-height;
+    margin-bottom: $progress-bar-margin-bottom;
+}
+
+ .empty-div{
+    height: $empty-div-height;
+    background-color: $primary-background-color;
+    z-index: $empty-div-z-index;
+    }
+ .survey-list > .col-md-8{
+        margin-top: $survey-list-col-md-8-top;
+     
+    }
+    .survey-list{
+        margin-top: $survey-list-margin-top;
+    }
+    .expiry-text-alert{
+        color: $expiry-text-color;
+    }
+.scrollable-list{
+    overflow: auto; 
+    max-height: 70vh;
+}

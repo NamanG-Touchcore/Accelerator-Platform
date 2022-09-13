@@ -1,0 +1,33 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { FormRenderer } from './form-renderer/form-renderer.component';
+import { ListSurveySectionComponent } from './list-survey-section/list-survey-section.component';
+import { ListSurveyComponent } from './list-survey/list-survey.component';
+import { LegalStatementComponent } from './legal-statement/legal-statement.component';
+import { LoginComponent } from './login/login.component';
+import { StaticComponentRendererComponent } from './static-component-renderer/static-component-renderer.component';
+import { SubjectRegistrationComponent } from './subject-registration/subject-registration.component';
+import { SubjectProfileComponent } from './subject-profile/subject-profile.component';
+const routes: Routes = [{
+  path: 'legalStatement', component: LegalStatementComponent
+}, {
+  path: 'surveys', component: ListSurveyComponent
+}, {
+  path: 'sections/:surveyInternalId', component: ListSurveySectionComponent
+}, {
+  path: 'form/:surveyInternalId/:sectionInternalId', component: FormRenderer
+}, {
+  path: 'static', component: StaticComponentRendererComponent
+}, {
+  path: 'subjectRegistration', component: SubjectRegistrationComponent
+}, {
+  path: 'subjectProfile', component: SubjectProfileComponent
+}, {
+  path: '', redirectTo: '/surveys', pathMatch: "prefix"
+},];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

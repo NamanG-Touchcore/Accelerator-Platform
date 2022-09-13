@@ -1,0 +1,64 @@
+@import '../../../variable.scss';
+input[type=file]::file-selector-button {
+    border: none;
+    border-bottom: 1px solid $primary-color;
+    padding: $file-input-padding;
+    border-radius: $border-radious-0;
+    background-color: $primary-background-color;
+    transition: 1s;
+    color: $primary-color;
+    cursor: pointer;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    border: none;
+    background-color: $primary-background-color;
+    border-bottom: 1px solid $primary-color;
+    color: $primary-color;
+    cursor: pointer;
+  }
+
+  
+.question{
+  @extend .question;
+   padding-bottom: $padding-bottom-0;
+    
+      font-size: $body-font-size;
+    
+    }
+    label{
+      margin-bottom: $header-content-margin-bottom;
+    }
+    .border-less-input,.border-less-input:focus,.border-less-input:hover{
+      -webkit-border: none;
+      -moz-border: none;
+      border: none;
+      -webkit-outline: none;
+      -moz-outline: none;
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    
+    .inline-block{
+      display: flex;
+      flex-direction: row;
+      flex-flow: row wrap;
+    }
+    
+    .inline{
+      display: inline;
+    }
+  
+    .input-label{
+      width: -moz-fit-content;
+      width: fit-content;
+      min-width: $input-label-length;
+    }
+  
+  div.inline-block > input, input:focus, input:hover {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+  }

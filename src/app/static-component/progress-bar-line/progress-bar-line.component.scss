@@ -1,0 +1,27 @@
+@import '../../../variable.scss';
+.progress {
+    color:  $progress-color !important;
+    // background-color: #fff;
+    position: absolute;
+    top: $progress-top;
+    z-index: $progress-z-index;
+    width: $progess-width;
+    height: $progress-height;
+    left: $progress-left;
+    background-color: $progress-background-color;
+}
+
+#progress-bar-line > span{
+    position: absolute;
+    top: $progress-span-top;
+    right: $progress-span-right;
+    color: $primary-color;
+    // text-overflow: ellipsis;
+    // overflow: hidden;
+    // white-space: nowrap;
+    // width: 2rem;
+}
+
+.progress-bar{
+    background-color: $primary-color;
+}

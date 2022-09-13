@@ -1,0 +1,27 @@
+@import '../../../variable.scss';
+.question{
+  @extend .question;
+}
+.form-check-input {
+  margin-right: $margin-right-10;
+}
+.image-container{
+  label{
+
+    input{
+      display: none;
+    }
+    input:checked + img{
+      outline: 1px solid $border-black;
+    }
+    img{
+      max-width: $image-selection-img-max-width;
+      max-height: $image-selection-img-max-height;
+    }
+  }
+} 
+ 
+
+
+
+

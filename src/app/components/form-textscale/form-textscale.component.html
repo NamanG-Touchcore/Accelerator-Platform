@@ -1,0 +1,24 @@
+<div *ngIf="formInput.question" class="form-group" [formGroup]="formInput.form">
+    <h2 class=" text-center mt-3 mb-3"><span *ngIf="isQuestionTextEmpty() && !isOptionalQuestion()" class="asterisk">*</span>{{formInput.question.title}}</h2>
+    <div class="question px-3 row"><span *ngIf="!isQuestionTextEmpty() && !isOptionalQuestion()" class="asterisk">*</span>{{formInput.question.text}}
+    </div>
+
+    <div class="container-fluid">
+        <div class="radio-button-container">
+            <label class="label-with-slider-line" [ngStyle]="{'opacity': disabled ? '0.5' : '1' }"
+                *ngFor="let opt of formInput.question.answerFormat.textChoices">
+                <input type="radio" class="" (change)="onChange($event)" 
+                    [name]="questionId" [value]="opt.value" [checked]="opt.value == this.formInput.form.value[this.questionId]"/>
+                <div class="row">
+                    <i class="col-2 fa-solid fa-circle blue-circle d-flex justify-content-end"></i>
+                    <span class="optionText col-10 d-flex justify-content-start">
+                        <span class="select-placeholder"><i class="fa-regular circle-placeholder fa-circle"></i></span><span class="option-text">{{opt.text}}</span></span>
+                </div>
+            </label><br>
+        </div>
+    </div>
+    <div class="pseudo-element" id="pseudo-element" [ngStyle]="{'display':sliderEnabled}">
+        <div class="pseudo-line" id="pseudo-line" (click)="enableSlide()"></div>
+    </div>
+
+</div>

@@ -1,0 +1,92 @@
+@import '../../../variable.scss';
+.question{
+    @extend .question;
+    text-align: center;
+}
+.form-check-input{
+    margin-right: $margin-right-10;
+}
+
+div{
+    .radio-box-container{
+        label{
+            display: block;
+            border-bottom: 1px solid $checkbox-border-color;
+            margin-bottom: $margin-bottom--2;
+            cursor: pointer;
+            min-height:$checkbox-container-min-height;
+            margin-top: $checkbox-container-margin-top;
+            margin-bottom: $checkbox-container-margin-bottom;
+            input{
+                visibility: hidden;
+            }
+            input + i {
+                visibility: hidden;
+                color: $primary-color;
+                margin-left: $input-i-margin-left;
+                margin-right: $input-i-margin-right;
+                float: right;
+                margin-top: $input-i-margin-top;
+                font-size: $input-i-font-size;
+            }
+            span {
+                display: inline-block;
+                vertical-align: top;
+                line-height: $checkbox-span-line-height;
+                width: $checkbox-span-width;
+            }
+            input:checked + i + span{
+                color: $primary-color;
+            }
+            input:checked + i {
+                visibility: visible;
+            }
+        }
+    }
+
+} 
+
+@media screen and (max-width:320px) {
+    div{
+        .radio-box-container{
+            label {
+                display: block;
+                border-bottom: 1px solid $checkbox-border-color;
+                margin-bottom: $margin-bottom--2;
+                cursor: pointer;
+                height: auto;
+                padding-top: $checkbox-container-margin-top;
+                padding-bottom: $checkbox-container-margin-bottom;
+                span {
+                    width: $checkbox-span-width;
+                }
+                input + i {
+                    margin-top: $input-i-margin-top-0;
+                }
+            }
+        }
+    } 
+
+}
+@media (min-width:321px) and (max-width:480px) {
+
+    div{
+        .radio-box-container{
+            label {
+                display: block;
+                border-bottom: 1px solid rgba(0,0,0,.1);
+                margin-bottom: $margin-bottom--2;
+                cursor: pointer;
+                height: auto;
+                padding-top: $checkbox-container-margin-top;
+                padding-bottom: $checkbox-container-margin-bottom;
+                span {
+                    width: $checkbox-span-width;
+                }
+                input + i {
+                    margin-top: $input-i-margin-top-0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,565 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'variable.scss';
+
+body {
+    font-family: "-apple-system", "Helvetica";
+    margin-bottom: $body-margin-bottom;
+    overflow-x: hidden;
+    font-size: 14px;
+    font-weight: $font-600;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+p {
+    font-size: $p-font-size;
+    font-weight: $font-600;
+}
+
+div {
+    strong {
+        margin-bottom: 1rem;
+        font-size: 17px;
+        display: block;
+    }
+}
+
+.question {
+    padding-top: $question-padding;
+    padding-bottom: $question-padding;
+    font-size: $body-font-size;
+    border-bottom: 1px solid $input-border-color;
+    font-weight: $font-400;
+}
+
+.border-less-btn {
+    border: none;
+    background: transparent;
+}
+
+.border-less-btn:not(:disabled):not(.disabled).active:focus,
+.border-less-btn:not(:disabled):not(.disabled):active:focus,
+.show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+.buttons>div>.btn-link {
+    display: block;
+    margin: $button-margin;
+    margin-top: $margin-top-10;
+    background-color: $button-background-color;
+    border: none !important;
+    color: $primary-border-color;
+    width: auto;
+    margin: 0px;
+    text-decoration: none !important;
+}
+
+.btn-link {
+    text-decoration: none !important;
+}
+
+/*Modal Popup CSS*/
+.modal-title {
+    width: $modal-title-width;
+    font-weight: bold;
+    padding-top: $padding-top-10;
+}
+
+.modal-header {
+    padding: $modal-header-padding;
+    border-bottom: $modal-bottom-border;
+}
+
+.modal-content {
+    border-radius: $modal-content-border-radious;
+}
+
+.modal-dialog {
+    margin-top: $modal-dialog-top-margin;
+}
+
+.modal-footer {
+    display: flex;
+    padding: $padding-0;
+}
+
+.right-border {
+    border-right: 1px solid $modal-border-color;
+}
+
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: $modal-dialog-mobile-width;
+        margin: $modal-dialog-mobile-margin;
+    }
+}
+
+.modal-dialog {
+    position: relative;
+    width: $modal-dialog-width;
+    margin: $modal-dialog-margin;
+    pointer-events: none;
+    margin: auto;
+}
+
+input[type="number"],
+input[type="number"]:focus,
+input[type="number"]:hover {
+    -webkit-border: none;
+    -moz-border: none;
+    border: none;
+    -webkit-outline: none;
+    -moz-outline: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="text"],
+input[type="text"]:focus,
+input[type="text"]:hover {
+    -webkit-border: none;
+    -moz-border: none;
+    border: none;
+    -webkit-outline: none;
+    -moz-outline: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.asterisk {
+    color: red;
+    width: auto;
+    display: contents;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    text-transform: none;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    text-transform: none;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    text-transform: none;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    text-transform: none;
+}
+
+::placeholder {
+    /* Recent browsers */
+    text-transform: none;
+}
+
+
+/*Survey List*/
+.survey-top-margin {
+    margin-top: $survey-top-margin;
+}
+
+.section-title-blue {
+    color: $primary-color;
+
+}
+
+.vertical-line {
+    margin-left: $vertical-line-margin-left;
+    border-left: 1px solid $primary-color;
+    height: $vertical-line-height;
+    margin-top: $vertical-line-margin-top;
+    margin-bottom: $vertical-line-margin-bottom;
+    margin-right: $vertical-line-margin-right;
+    z-index: $vertical-line-z-index;
+}
+
+.section-display {
+    margin: $section-display-margin;
+    margin-top: $section-display-margin-top;
+}
+.cancel-button {
+    div {
+        font-size: smaller;
+    }
+}
+.danger {
+    color: $danger-text !important;
+    span{
+        color: $primary-background-color !important;
+        height: $danger-span-height !important;
+        width: $danger-span-width !important;
+        background: $danger-text !important;
+        border-radius: $webkit-slider-thumb-border-radious !important;
+        padding: $danger-span-padding !important;
+    }
+
+}
+
+.warninng {
+    color: $warning-text !important;
+    span {
+        width: $warning-span-width !important;
+        height: $warning-span-height !important;
+        border-style: inset !important;
+        border-width: $warning-span-padding !important;
+        border-color: transparent transparent $warning-text transparent !important;
+        float: left !important;
+        transform:$warning-span-transform ;
+        -ms-transform: $warning-span-transform;
+        -moz-transform: $warning-span-transform;
+        -webkit-transform: $warning-span-transform;
+        -o-transform: $warning-span-transform;
+        border-radius: $warning-span-border-radious !important;
+      span {
+        color: $primary-background-color !important;
+        text-align: center !important;
+        top: $warning-span-span-top !important;
+        left: $warning-span-span-left !important;
+        position: relative !important;
+        width: $warning-span-span-width !important;
+        height: $warning-span-span-height !important;
+        margin: $warning-span-span-margin !important;
+      }
+    }
+}
+
+.message {
+    color: $message-text !important;
+    margin-left: $message-left-margin;
+        span{
+        span{
+            display: none;
+        }
+    }
+}
+
+@media (min-width:371px) {
+    .ribbon-badge {
+        top: 61px;
+        right: -21px;
+    }
+}
+@media (max-width:371px) {
+    .ribbon-badge {
+        top: 52px;
+        right: -22px;
+    }
+}
+
+.ribbon-badge {
+    position: fixed;
+    z-index: 99999;
+    transform: rotate(70deg);
+    -ms-transform: rotate(70deg);
+    -webkit-transform: rotate(45deg);
+
+    .badge-pill {
+        border-radius: 0px 0px 0px 0px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+.modal-backdrop {
+    z-index: 9999999;
+}
+
+.modal {
+    z-index: 99999999999;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+@media (min-height:667px) {
+    .question {
+        max-height: 280px;
+        overflow-y: scroll;
+    }
+}
+
+@media (min-height:668px)and (max-height:1200) {
+    .question {
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+}
+@media (min-width:355px) and (max-width:400px) {
+.title-section{
+    a{
+        font-size: 92%;
+    }
+}
+}
+@media (min-width:351px) and (max-width:368px) {
+    .vertical-line-between-section {
+        margin-left: 0.3rem !important;
+    }
+
+    .section-title-light-blue {
+        padding-left: 0px !important;
+        margin-left: 0px !important;
+
+        a {
+            font-size: 83% !important;
+        }
+    }
+
+    .listed-surveys {
+        margin-left: 0px !important;
+    }
+
+    .badge-pill {
+        padding: 1.5px 4px 0px 4px !important;
+        height: 15.5px !important;
+        line-height: 1.7 !important;
+        font-size: 0.45rem !important;
+        margin: 9.8px 2px 0px 2px !important;
+    }
+
+    .section-title-grey {
+        a {
+            font-size: 18px !important;
+        }
+    }
+
+    .section-title-blue {
+        a {
+            font-size: 18px !important;
+        }
+    }
+
+    .conditional {
+        margin-left: -2.5rem !important;
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .section-title-light-blue>span {
+        font-size: 0.7rem !important;
+    }
+
+    .section-title-blue>span {
+        font-size: 0.7rem !important;
+    }
+
+    .section-title-grey>span {
+        font-size: 0.7rem !important;
+    }
+
+}
+@media (min-width:281px) and (max-width:350px){
+    .vertical-line-between-section {
+        margin-left: 0.3rem !important;
+    }
+
+    .listed-surveys {
+        margin-left: 0px !important;
+    }
+
+    .badge-pill {
+        padding: 1.5px 4px 0px 4px !important;
+        height: 15.5px !important;
+        line-height: 1.7 !important;
+        font-size: 0.45rem !important;
+        margin: 10.8px 2px 0px 2px !important;
+    }
+
+    .section-title-grey {
+        a {
+            font-size: 16px !important;
+        }
+    }
+
+    .section-title-blue {
+        a {
+            font-size: 16px !important;
+        }
+    }
+
+    .conditional {
+        margin-left: -2.5rem !important;
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .section-title-light-blue>span {
+        font-size: 0.6rem !important;
+    }
+
+    .section-title-blue>span {
+        font-size: 0.6rem !important;
+    }
+
+    .section-title-grey>span {
+        font-size: 0.6rem !important;
+    }
+
+
+}
+
+@media (min-width:303px) and (max-width:350px) {
+    .section-title-light-blue {
+        margin-left: 0px !important;
+
+        a {
+            font-size: 75% !important;
+        }
+    }
+}
+@media (min-width:291px) and (max-width:303px) {
+    .section-title-light-blue {
+        margin-left: 0px !important;
+
+        a {
+            font-size: 70% !important;
+        }
+    }
+}
+@media (min-width:281px) and (max-width:291px) {
+    .section-title-light-blue {
+        margin-left: 0px !important;
+
+        a {
+            font-size: 65% !important;
+        }
+    }
+}
+
+@media (min-width:241px) and (max-width:280px) {
+    .vertical-line-between-section {
+        margin-left: 0.3rem !important;
+    }
+    .section-title-light-blue {
+        padding-left: 0px !important;
+        margin-left: 0px !important;
+
+        a {
+            font-size: 65% !important;
+        }
+    }
+
+    .listed-surveys {
+        margin-left: 0px !important;
+    }
+
+    .badge-pill {
+        padding: 1.5px 4px 0px 4px !important;
+        height: 15.5px !important;
+        line-height: 1.7 !important;
+        font-size: 0.45rem !important;
+        margin: 10.8px 2px 0px 2px !important;
+    }
+
+    .section-title-grey {
+        a {
+            font-size: 68% !important;
+        }
+    }
+
+    .section-title-blue {
+        a {
+            font-size: 68% !important;
+        }
+    }
+
+    .conditional {
+        margin-left: -2.5rem !important;
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .section-title-light-blue>span {
+        font-size: 0.65rem !important;
+    }
+
+    .section-title-blue>span {
+        font-size: 0.65rem !important;
+    }
+
+    .section-title-grey>span {
+        font-size: 0.65rem !important;
+    }
+}
+
+@media (min-width:200px) and (max-width:240px) {
+    .vertical-line-between-section {
+        margin-left: 0.3rem !important;
+    }
+    .section-title-light-blue {
+        padding-left: 10px !important;
+        margin-left: 0px !important;
+
+        a {
+            font-size: 11px !important;
+        }
+    }
+
+    .listed-surveys {
+        margin-left: 0px !important;
+    }
+
+    .badge-pill {
+        padding: 1.5px 4px 0px 4px !important;
+        height: 13.5px !important;
+        line-height: 1.7 !important;
+        font-size: 0.4rem !important;
+        margin: 10.8px 2px 0px 2px !important;
+    }
+
+    .section-title-grey {
+        a {
+            font-size: 11px !important;
+        }
+    }
+
+    .section-title-blue {
+        a {
+            font-size: 11px !important;
+        }
+    }
+
+    .conditional {
+        margin-left: -2.5rem !important;
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .section-title-light-blue>span {
+        font-size: 0.4rem !important;
+    }
+
+    .section-title-blue>span {
+        font-size: 0.4rem !important;
+    }
+
+    .section-title-grey>span {
+        font-size: 0.4rem !important;
+    }
+}

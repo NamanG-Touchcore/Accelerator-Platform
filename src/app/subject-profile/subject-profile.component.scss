@@ -1,0 +1,203 @@
+@import "../../variable.scss";
+.fixed-bottom {
+  background: $primary-background-color;
+  z-index: 0 !important;
+}
+
+.buttons > button,
+.buttons > button:active,
+.buttons > button:focus {
+  display: block;
+  margin: $button-margin;
+  margin-top: $margin-top-10;
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+.loader-icon {
+  height: $loader-icon-height;
+  width: $loader-icon-width;
+  margin: $loader-icon-margin;
+}
+.text-grey {
+  color: $section-title-grey;
+  font-size: $poweredby-font-size;
+}
+.profile-display {
+  margin: $section-display-margin;
+  margin-top: $section-display-margin-top;
+  position: fixed;
+  top: $section-display-top;
+  background: $primary-background-color;
+  width: $width-100;
+  left: $left-0;
+  z-index: $section-display-z-index;
+  left: $left-0;
+}
+.subject-name {
+  color: $section-title-color;
+  font-weight: $font-700;
+  padding-bottom: $section-title-padding-bottom;
+  line-height: $section-title-line-height;
+}
+.subject-id {
+  color: $section-title-grey;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: $switch-height;
+  height: $switch-width;
+}
+.border-line {
+  border-top: 2px solid #f1f1f1;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: $top-0;
+  left: $left-0;
+  right: $right-0;
+  bottom: $bottom-0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 23px;
+  width: 23px;
+  left: 4px;
+  bottom: 4px;
+  background-color: $primary-background-color;
+  -webkit-transition: $slider-transition;
+  transition: $slider-transition;
+}
+
+input:checked + .slider {
+  background-color: $primary-color;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $primary-color;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: $slider-round-border-radious;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.tm-font {
+  font-size: 0.5rem;
+}
+
+.select {
+  position: $select-position;
+}
+.select svg {
+  position: $select-svg-position;
+  right: $select-svg-right;
+  top: $select-svg-top;
+  width: $select-svg-width;
+  height: $select-svg-height;
+  stroke-width: $select-svg-stroke-width;
+  stroke: $select-svg-stroke;
+  fill: $select-svg-fill;
+  stroke-linecap: $select-svg-stroke-linecap;
+  stroke-linejoin: $select-svg-stroke-linejoin;
+  pointer-events: $select-svg-pointer-events;
+  transform: $select-svg-transform;
+}
+.select select {
+  -webkit-appearance: $select-webkit-appearance;
+  padding: $select-padding;
+  border: $select-border;
+  border-radius: $select-border-radius;
+  background: $select-background;
+  cursor: $select-cursor;
+  font-family: $select-font-family;
+  font-size: $select-font-size;
+  transition: $select-transition;
+  margin-top: 2px;
+}
+.select select:required:invalid {
+  color: $select-invalid-color;
+}
+.select select option {
+  color: $select-option-color;
+}
+.select select option[value=""][disabled] {
+  display: $select-display;
+}
+.select select:focus {
+  outline: $select-outline;
+  border-color: $select-border-color;
+  box-shadow: $select-box-shadow;
+}
+.select select:hover + svg {
+  stroke: $select-stroke;
+}
+.sprites {
+  position: $select-sprites-position;
+  width: $select-sprites-width;
+  height: $select-sprites-height;
+  pointer-events: $select-sprites-pointer-events;
+  user-select: $select-sprites-user-select;
+}
+
+.pl-0{
+  padding-left: 0!important;
+}
+
+.border-bottom{
+  border-bottom: 2px solid #f1f1f1;
+}
+
+.public-links-section > p {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+a {
+  color: $primary-color !important;
+  text-decoration: none !important;
+  text-align: center !important;
+}
+
+.pointer-cursor:hover {
+  cursor: pointer;
+}
+
+.pointer-cursor {
+  margin-left: 0.05em;
+  margin-right: 0.05em;
+}
+
+.modal {
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.fa-trash-can,
+.fa-chevron-right{
+  font-size: 0.7rem;
+  margin-top: 10px;
+}

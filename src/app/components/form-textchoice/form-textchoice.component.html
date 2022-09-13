@@ -1,0 +1,10 @@
+<div *ngIf="formInput.question">
+    <div *ngIf="formInput.question.answerFormat.style!=='multiple'">
+        <app-form-radio [formInput]="formInput">
+        </app-form-radio>
+    </div>
+    <div *ngIf="formInput.question.answerFormat.style==='multiple'">
+        <app-form-checkbox [formInput]="formInput">
+        </app-form-checkbox>
+    </div>
+</div>

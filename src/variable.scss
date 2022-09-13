@@ -1,0 +1,344 @@
+$primary-color:#0056a5;
+$primary-background-color:#fff;
+$secondary-background-color:#fafafa;
+$primary-border-color:#0056a5;
+$secondary-border-color:#eee;
+$input-border-color:#d2d2d2;
+$disabled-color:gray !important;
+$text-center:center;
+$width-100:100%;
+$font-400:400;
+$font-500:500;
+$font-600:600;
+$margin-top-10:10px;
+$input-min-length:108px;
+$input-border-radius:0px;
+$instruction-margin-top:150px;
+$control-label-min-width:50%;
+$text-control-label:200px;
+$text-border-less-input-width:70%;
+$question-padding:1rem;
+$question-left-padding:25px;
+$padding-left-0:0px;
+$padding-left-10:10px;
+$padding-bottom-0:0px;
+$padding-right-0:0px;
+$img-width:250px;
+$img-max-height:200px;
+$input-min-length:108px;
+$input-label-length:180px;
+$mt-top:70px;
+$top-0:0;
+$bottom-0:0;
+$left-0:0;
+$right-0:0;
+$modal-backdrop-background:rgba(47 45 45 / 70%);
+$badge-light-color:#666;
+$badge-light-background:#f2f5f9;
+
+/*Complition Component CSS*/
+$complition-icon-font-size:2.5rem;
+$complete-icon-font-size:10rem;
+
+/*Modal Popup style*/
+$modal-border-color:#dee2e6;
+$modal-title-width:100%;
+$button-background-color:#fff;
+$modal-header-padding:0.5rem 0.5rem;
+$modal-bottom-border:0px solid $modal-border-color;
+$modal-dialog-top-margin:35% !important;
+$modal-dialog-mobile-width:400px;
+$modal-dialog-width:90%;
+$modal-dialog-mobile-margin:1.75rem auto;
+$modal-dialog-margin:0.5rem;
+$padding-top-10:10px;
+$modal-content-border-radious:24px;
+$border-right:1px solid $modal-border-color;
+$padding-0:0px;
+$border-radious-0:0px;
+$body-margin-bottom:110px;
+$p-font-size:14px;
+/*Header Style*/
+$survey-header-box-shadow:rgb(0 0 0 / 9%) 0px 3px 2px, rgb(146 209 213 / 35%) 0px 2px 2px;
+$survey-header-background-color:$secondary-background-color;
+$icon-color:$primary-color;
+$survey-header-padding:5px 15px;
+$icon-margin:5px;
+$header-fixed-top-z-index:999999;
+$header-text-margin:10px;
+$w-max-content-margn-top:4px;
+$header-content-max-width:190px;
+$header-content-color:#999;
+$header-content-font-weight:600;
+$back-icon-font-size:1.3rem;
+$user-icon-left-margin:15px;
+$top-margin-8:8px;
+$top-margin-12:12px;
+$cancel-button-padding-right:10px;
+$body-font-size:1.1rem;
+$cancel-button-font-size:1rem;
+$poweredby-font-size:1rem;
+$header-content-margin-bottom:0px;
+$padding-badge:0.6em;
+$badge-border-radius:10rem;
+$badge-font:0.7rem;
+$language-dropdown-menu-width:280px;
+$language-dropdown-menu-left:-200px;
+$language-dropdown-menu-top:35px;
+$language-dropdown-menu-max-height: 300px;
+$language-dropdown-menu-max-box-shadow:  0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+$language-dropdown-wrapper-width: 85px;
+$language-dropdown-wrapper-height: 40px;
+$language-dropdown-wrapper-top: -10px;
+$language-dropdown-wrapper-left: -15px;
+$language-trigger-dropdown-padding: 0 20px;
+$language-trigger-dropdown-line-height: 22px;
+$language-dropdown-item-font-size: 1rem;
+$language-dropdown-item-height: 50px;
+$language-dropdown-item-padding: 0 20px;
+/*Footer CSS*/
+$border-less-next-btn-padding:7px 20px;
+$border-less-next-btn-width:72px;
+$bottom-right-next-btn-height:40px;
+$disabled-btn-color:$disabled-color;
+$disabled-btn-border-color:$disabled-color;
+$button-margin:0px auto;
+$button-width:180px;
+$botton-border-radious:6px;
+$border-less-next-btn-disabled-opacity:0.5;
+
+/*Checkbox CSS*/
+$margin-right-10:10px;
+$checkbox-border-color:rgba(0,0,0,.1);
+$margin-bottom--2:-2px;
+$margin-bottom--6:-6px;
+$checkbox-container-min-height:40px;
+$checkbox-container-margin-top:1rem;
+$checkbox-container-margin-bottom:1rem;
+$input-i-margin-left:-0.5em;
+$input-i-margin-right: 0em;
+$input-i-margin-top:7px;
+$input-i-font-size:20px;
+$checkbox-span-line-height:1.4em;
+$checkbox-span-width:80%;
+$input-i-margin-top-0:0px;
+$answer-option-font-size:1.1rem;
+
+/*Loader*/
+$loading-text-font-size:1.2rem;
+
+/*List Survey Section*/
+$section-display-margin:20px 0px;
+$section-display-margin-top:80px;
+$section-display-z-index:999;
+$section-title-border-color:#777;
+$survey-top-margin:40px;
+$section-display-top:-2px;
+$section-title-color:#008965;
+$font-700:700;
+$response-message-font-size:0.7rem;
+$section-title-padding-bottom:5px;
+$section-title-line-height: 2.5rem;
+$section-title-font-size:1rem;
+$progress-bar-max-height:4rem;
+$progress-bar-margin-bottom:45px;
+$vertical-line-margin-left:0.3rem;
+$vertical-line-height:1rem;
+$vertical-line-margin-top:-1.2rem;
+$section-vertical-line-height:1.2rem;
+$vertical-line-margin-bottom:4.8rem;
+$vertical-line-margin-right:-20px;
+$section-title-font-size:1rem;
+$vertical-line-between-section-height:1.4rem;
+$vertical-line-between-section-margin-top:-1rem;
+$vertical-line-z-index:-1;
+$empty-div-height:0px;
+$empty-div-z-index:9999;
+$survey-list-margin-top:25px;
+$survey-header-height:47px;
+$survey-list-col-md-8-top:-14px;
+$section-title-light-blue:#0387c6;
+$section-title-grey:grey;
+$section-title-grey-span:0.8rem;
+$vertical-line-between-section-margin-left:1.3rem;
+$vertical-line-between-section-height:1rem;
+$vertical-line-between-section-margin-top:-1rem;
+$vertical-line-for-first-element-margin-bottom:5rem;
+$vertical-line-for-first-element-margin-top: -1.1rem;
+$conditional-i-margin-left:0.7rem;
+$conditional-i-margin-top:0.7rem;
+$conditional-margin-left:-2.5rem;
+$conditional-width:34px;
+$conditional-height:50px;
+$conditional-margin-left:-2.5rem;
+$dotted-circle-for-upcoming-surveys-width:2.6rem;
+$dotted-circle-for-upcoming-surveys-height:2.6rem;
+$web-icon-for-now-section-margin-left: -1.7rem;
+$web-icon-for-now-section-margin-right: 0.55rem;
+
+/*List Survey*/
+$survey-display-margin-top:30px;
+$listed-surveys-margin-left:14px;
+$expiry-text-color:#c41e1e;
+/*Image Selection*/
+$image-selection-img-max-height:4rem;
+$image-selection-img-max-width:4rem;
+$border-black:#000;
+$vertical-image-selection-img-max-height:6rem;
+$vertical-image-selection-img-max-width:6rem;
+
+/*Static Survey Header*/
+$static-survey-header-padding:10px 0px;
+
+/*Static Custom Section*/
+$img-margin:0px auto;
+
+/*Static Email*/
+$error-msg-color:red;
+
+/*File Upload*/
+$file-input-padding:.2em .6em;
+
+/*Line Progress Bar*/
+$progress-color:#000;
+$progress-top:2.5rem;
+$progress-z-index:1050;
+$progess-width:100vw;
+$progress-height:4px;
+$progress-left:-6.75rem;
+$progress-background-color:#d0d0d0;
+$progress-span-top: 8.5px;
+$progress-span-right:28px;
+
+/*Textscale - with Radio Button*/
+$scale-container-padding:40px 30px;
+$scale-container-label-bottom-margin:-2px;
+$scale-container-label-bottom-padding-mobile:1.5rem;
+$scale-container-span-line-height:1em;
+$scale-container-span-margin-left:1rem;
+$scale-container-span-margin-top:-8px;
+$margin-left-8:-8px;
+$padding-left-15:15px;
+$padding-right-15:15px;
+$padding-top-15:15px;
+$scale-container-span-font-size:0.9rem;
+$padding-top-0:0rem;
+$scale-container-label-bottom-padding:2rem;
+$border-left-color:#888;
+$border-radious-30:30px;
+$scale-font-size:16px;
+$scale-i-margin-left:-1.4em;
+$scale-i-margin-right:1.5em;
+$scale-i-margin-top:-12px;
+$scale-i-z-index:99999;
+$input-mark-left:23px;
+$input-mark-z-index:99;
+
+/*Text Scale with Range Slider*/
+$slide-container-margin-left:-148px;
+$slide-container-margin-top:38px;
+$ul-labels-margin-left:73px;
+$ul-labels-line-height:-150px;
+$ul-labels-padding-left:0px;
+$ul-labels-left-padding-left:30px;
+$ul-labels-span-padding-left:15px;
+$input-range-width:293px;
+$input-range-height:293px;
+$webkit-slider-width:500px;
+$webkit-slider-height:1px;
+$moz-slider-width:300px;
+$webkit-slider-thumb-height:20px;
+$webkit-slider-thumb-width:20px;
+$webkit-slider-thumb-border-radious:50%;
+$slider-thumb-margin-top:-9px;
+$slider-thumb-margin-left:-2px;
+$moz-slider-thumb-height:16px;
+$moz-slider-thumb-width:16px;
+
+/*Badge */
+$badge-pill-background:#808080;
+$badge-pill-border-radius:6px 6px 6px 0px ;
+$badge-pill-margin:14.8px 0px 0px -1px;
+$badge-pill-letter-spacing:1px;
+$badge-pill-padding: 2.5px 5px 0px 5px;
+$badge-pill-height:17.5px;
+$badge-pill-transform:skew(180deg);
+$badge-pill-line-height:1.25;
+$badge-pill-font-size:0.62rem;
+
+/* Loader */
+$loading-text-color:#4b749b;
+$loader-font-size:1.2rem;
+$loading-svg-top:0;
+$loading-svg-left:0;
+$loading-svg-bottom:0;
+$loading-svg-right:0;
+$loader-height:100%;
+$loading-svg-z-index:999999999;
+$loading-svg-object-width:70%;
+$loader-modal-parent-container-z-index:100000;
+
+/* Subject Profile*/
+
+$loader-icon-height:25px;
+$loader-icon-width:25px;
+$loader-icon-margin:0px 10px 0px 0px;
+$switch-height:56px;
+$switch-width:30px;
+$border-line-color:#666;
+$border-line-padding:20px;
+$slider-transition: .4s;
+$slider-round-border-radious:30px;
+$select-position: relative;
+$select-svg-position: absolute;
+$select-svg-right: 0.1px;
+$select-svg-top: calc(50% - 3px);
+$select-svg-width: 10px;
+$select-svg-height: 6px;
+$select-svg-stroke-width: 2px;
+$select-svg-stroke: #9098a9;
+$select-svg-fill: none;
+$select-svg-stroke-linecap: round;
+$select-svg-stroke-linejoin: round;
+$select-svg-pointer-events: none;
+$select-svg-transform: rotate(270deg);
+$select-webkit-appearance: none;
+$select-border: none;
+$select-padding: 7px 30px 7px 12px;
+$select-border-radius: 0;
+$select-background: transparent;
+$select-cursor: pointer;
+$select-font-family: inherit;
+$select-font-size: 16px;
+$select-transition: all 150ms ease;
+$select-invalid-color: #5a667f;
+$select-option-color: #223254;
+$select-display: none;
+$select-outline: none;
+$select-border-color: #0056a5;
+$select-box-shadow: 0 0 0 2px rgba(0,119,255,0.2);
+$select-stroke: #0056a5;
+$select-sprites-position: absolute;
+$select-sprites-width: 0;
+$select-sprites-height: 0;
+$select-sprites-pointer-events: none;
+$select-sprites-user-select: none;
+
+/*Expiry date range colors*/
+$danger-text:#cf1313;
+$warning-text:#f16e05;
+$message-text:gray;
+$warning-span-span-width:5px;
+$warning-span-span-height:5px;
+$warning-span-height:0px;
+$warning-span-width:0px;
+$danger-span-height:15px;
+$danger-span-width:15px;
+$danger-span-padding:0px 0.17rem 0px 0.17rem;
+$warning-span-padding:5px 10px 15px 10px;
+$warning-span-span-top:0.1rem;
+$warning-span-span-left:-2px;
+$warning-span-span-margin:0px;
+$warning-span-border-radious:2px;
+$warning-span-transform:rotate(360deg);
+$message-left-margin:-5px;
