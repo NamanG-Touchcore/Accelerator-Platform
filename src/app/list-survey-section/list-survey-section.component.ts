@@ -30,7 +30,7 @@ export class ListSurveySectionComponent implements OnInit {
   ngOnInit(): void {
     this.surveyInternalId = this.route.snapshot.paramMap.get('surveyInternalId')
     this.surveyResponse = this.formService.selectedSurvey
-    console.log('this.surveyResponse',this.surveyResponse)
+    // console.log('this.surveyResponse',this.surveyResponse)
     if (!this.surveyResponse) {  // Page has been reloaded
       this.router.navigate([''])
     }

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { FormGroup } from "@angular/forms";
-import { ReplaySubject } from "rxjs";
+import { ReplaySubject , Subject} from "rxjs";
 import { SurveySectionResponseItemData } from "../models/survey-section-response-item-data.model";
 import { Utility } from "../utility/utility";
 import { FormService } from "./form.service";
@@ -29,7 +29,7 @@ export class FormStepNavigator {
     hyperLinkClickedSubject = new ReplaySubject<boolean>(1);
     hyperLinkClickedStepSubject = new ReplaySubject<any>(1); // This will  emit the step when user clicks on hyperlink in any step
     progressSubject = new ReplaySubject<number>();  // Calculate the progress percentage and send to progress bar component.
-
+    stepsUpdateSubject = new Subject<any>();
 
     //  Reset all indexes, on completion of section and click on cancel.
     resetAllIndexes(): void {
@@ -41,7 +41,7 @@ export class FormStepNavigator {
 
     getTotalStepCount(): number {
         let count = this.sectionConfiguration.steps.length
-        console.log(this.sectionConfiguration)
+        // console.log(this.sectionConfiguration)
         for (let step of this.sectionConfiguration.steps) {
             if (this.isVisualStep(step)) {
                 count += step.document.sections.length
@@ -297,7 +297,7 @@ export class FormStepNavigator {
 
     renderImmediatePreviousStep(step: any): void {
         let previousStep = this.getImmediatePreviousStep(step)
-        // If immediate previous step is a parent question, then render that step 
+        // If immediate previous step is a parent question, then render that step
         // if ((!previousStep.predicateParentIdentifiers || previousStep.predicateParentIdentifiers.length === 0) && this.showStepBasedOnParam(previousStep)) {
         //     this.changeStep(previousStep)
         // } else {
@@ -305,7 +305,7 @@ export class FormStepNavigator {
             // then call the function recursively
             if (previousStep.predicateParentIdentifiers && !this.checkPredicateResultSteps(previousStep).found) {
                 this.renderImmediatePreviousStep(previousStep)
-            } 
+            }
             // else if (!this.showStepBasedOnParam(previousStep)) {  // If the step should not be shown as per the param value
             //     // then call the function recursively
             //     this.renderImmediatePreviousStep(previousStep)
@@ -354,7 +354,7 @@ export class FormStepNavigator {
         if (!lastVisitedQuestionId)
             return -1
         let lastVisitedStep = this.sectionConfiguration.steps.filter(ob => {
-            // Here question and form cases are checked explicitly because the itemOID stored in 
+            // Here question and form cases are checked explicitly because the itemOID stored in
             // the backend is at the formItem level in case of form
             switch (ob.step) {
                 case "question": {
@@ -398,7 +398,7 @@ export class FormStepNavigator {
                     directStepFound = true
                     break
                 }
-            } 
+            }
             // else if (this.showStepBasedOnParam(directStep)) { // If direct step is not shown as per predicate rule then check the param value
             //     // If the index is less than the current index (since it is previous navigation), then show the step
             //     if (directStepIndex < this.questionIndex) {
@@ -419,7 +419,7 @@ export class FormStepNavigator {
         let previousStep: any = null
         for (let defaultStepId of step.defaultStepParentIdentifiers) {
             let defaultStep = this.getStepById(defaultStepId)
-            // Check if the predicate rule is satisfied, if the default step is shown according 
+            // Check if the predicate rule is satisfied, if the default step is shown according
             // to the predicate rule.
             if (defaultStep.predicateParentIdentifiers) {
                 if (this.checkPredicateResultSteps(defaultStep).found) {
@@ -427,7 +427,7 @@ export class FormStepNavigator {
                     defaultStepFound = true
                     break
                 }
-            } 
+            }
             // else if (this.showStepBasedOnParam(defaultStep)) { //If default step is not shown as per predicate rule then check the param value
             //     previousStep = JSON.parse(JSON.stringify(defaultStep))
             //     defaultStepFound = true
@@ -436,7 +436,7 @@ export class FormStepNavigator {
         }
         if (defaultStepFound) {
             // Once the default step is found, then update the visibility of all the steps
-            // that need to be shown as per the default step 
+            // that need to be shown as per the default step
             let prevIndex = this.updateVisibilityFromDefaultStep(previousStep)
             if (prevIndex !== -1) {
                 previousStep = this.sectionConfiguration.steps[prevIndex]
@@ -719,12 +719,12 @@ export class FormStepNavigator {
             // This condition will directly jump to the next step which is present in destination identifier
             if (currentStep.navigationRule === 'direct') {
                 let stepId = currentStep.destinationStepIdentifiers[0]
-                let step = this.sectionConfiguration.steps.filter(ob => ob.identifier === stepId)[0]  // Here we are not checking conditional rendering of step based on param value. 
+                let step = this.sectionConfiguration.steps.filter(ob => ob.identifier === stepId)[0]  // Here we are not checking conditional rendering of step based on param value.
                 this.changeStep(step)
             } else {
                 // Check if any branch question of the current question needs to be displayed as per the predicate logic.
                 let questionChanged = this.checkPredicateResults(currentStep)
-                console.log(questionChanged);
+                // console.log(questionChanged);
                 if (!questionChanged) {
                     // If there is no branch question displayed, then navigate to default step of the current step
                     if (currentStep.defaultStepIdentifier) {
@@ -811,7 +811,59 @@ export class FormStepNavigator {
         return questionChanged
     }
 
+    displayQuestions(question,responseValue){
+      // this.formService.configuration
+      let SectionSteps;
+      console.log(this.formService.configuration)
+      this.formService.configuration.sections.forEach((element,ind)=>{
+        element.steps.forEach((ele)=>{
+          if(ele.identifier == question.identifier){
+            // console.log('element',element)
+            SectionSteps = element.steps;
+          }
+        })
+      })
+
+      let nextPredicateQuestion;
+      if(question.navigationRule === 'predicate'){
+        if(question.predicateResults.hasOwnProperty(responseValue)){
+          nextPredicateQuestion = question.predicateResults[responseValue];
+        } else {
+          nextPredicateQuestion = question.defaultStepIdentifier;
+        }
+      }
+      let currentQuestionIndex;
+      currentQuestionIndex = SectionSteps.findIndex(el => el == question)
+      currentQuestionIndex = currentQuestionIndex + 1;
+      let currentQuestion = SectionSteps[currentQuestionIndex]
+
+      if(question.isAns){
+
+      } else {
+        while (currentQuestion.identifier != nextPredicateQuestion) {
+          currentQuestion = SectionSteps[currentQuestionIndex]
+          currentQuestion['isHidden'] = true;
+          currentQuestion = SectionSteps[currentQuestionIndex - 1]
+          currentQuestion['isAns'] = true;
+        }
+      }
+      this.stepsUpdateSubject.next(SectionSteps)
+    }
+
+    // 1
+    // 2
+    // 3
+    //     4 hidden
+    //     5 hidden
+    // =>  6
+    //     7
+
+
     saveIndividualResponse(questionId: string, responseValue: string, question: any, parentQuestion: any): void {
+        // Call our own function, that would traverse through the questions and hide the ones that have opposing predicate logic
+        console.log(questionId,question,parentQuestion)
+        this.displayQuestions(question,responseValue)
+        // this.displayQuestions()
         let loglineRepeatKey = this.formService.getFinalLoglineRepeatKey(question, parentQuestion)
         // Do not consider the logline repeat key from the question Id.
         questionId = Utility.extractStringValue(questionId, "@", 0)
@@ -869,7 +921,7 @@ export class FormStepNavigator {
                 response.itemOID = Utility.extractStringValue(response.itemOID, "?", 0)
                 return response
             })
-            console.log(finalResponses)
+            // console.log(finalResponses)
             DataStorage.saveSurveySectionResponse(this.formService.selectedSection.id,
                 finalResponses,
                 this.formService.selectedSurvey.id
@@ -1050,7 +1102,7 @@ export class FormStepNavigator {
         let displayStep = true
         if (step.params) {
             for (let param of step.params) {
-                console.log(param.key)
+                // console.log(param.key)
                 let fetchedParamValue = this.paramValues[param.key]
                 if (fetchedParamValue) {
                     if (fetchedParamValue.toLowerCase() !== param.value.toLowerCase() && param.action.toLowerCase() === 'show') {

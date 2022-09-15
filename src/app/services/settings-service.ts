@@ -7,7 +7,8 @@ export class SettingsService {
     constructor(private cookieService: CookieService) { }
 
     getLanguage(): any {
-        let preferredLanguage = this.cookieService.get("preferredLanguage")
+        // let preferredLanguage = this.cookieService.get("preferredLanguage")
+        let preferredLanguage = "en"
         return preferredLanguage;
     }
 

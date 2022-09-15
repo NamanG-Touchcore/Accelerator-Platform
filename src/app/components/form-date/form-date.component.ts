@@ -68,6 +68,7 @@ export class FormDateComponent implements OnInit, OnChanges {
   }
 
   getInvalidMessage(): string {
+    console.log(this.getMaximumDate())
     return Utility.stringFormat(this.formInput.question.answerFormat.invalidMessage, [this.datePipe.transform(this.getMaximumDate())])
   }
 

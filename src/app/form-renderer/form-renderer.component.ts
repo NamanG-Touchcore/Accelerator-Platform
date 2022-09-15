@@ -49,12 +49,17 @@ export class FormRenderer implements OnInit {
     })
     this.formStepNavigatorService.questionIndexSubject.subscribe(questionIndex => {
       this.questionIndex = questionIndex
+      console.log(this.questionIndex)
     })
     this.formStepNavigatorService.hyperLinkClickedSubject.subscribe(isLinkClicked => {
       this.hyperlinkClicked = isLinkClicked
     })
-    // console.log(this.sectionConfiguration)
-    console.log(this.formService.configuration)
+    this.formStepNavigatorService.stepsUpdateSubject.subscribe(updates => {
+      // this.sectionConfiguration.steps = updates;
+      console.log(this.sectionConfiguration.steps)
+    })
+    // console.log(this.formService.configuration)
+    console.log(this.sectionConfiguration.steps)
   }
 
   setupConfiguration(sectionInternalId: string): void {
@@ -63,12 +68,12 @@ export class FormRenderer implements OnInit {
       // console.log('this.sectionConfiguration',this.sectionConfiguration)
     } else {
       this.sectionConfiguration = this.formService.getSurveySectionConfiguration(sectionInternalId)
-      console.log('this.sectionConfiguration',this.sectionConfiguration)
+      // console.log('this.sectionConfiguration',this.sectionConfiguration)
     }
     let initialized = this.formService.initializeSectionResponseAndProgress()
     // if (!initialized) {
     //   this.formService.fetchSurveySectionResponses().subscribe(result => {
-    //     console.log(result)
+        // console.log(result)
     //     DataStorage.initializeSurveySectionResponse(this.formService.selectedSection.id, this.formService.selectedSurvey.id, result)
     //     this.completeSetup()
     //   })
@@ -76,7 +81,7 @@ export class FormRenderer implements OnInit {
       // }
       // if (this.sectionConfiguration.paramEndpoint) {
       //     this.formService.getParamValues(this.subjectService.loggedInSubject.subjectId, this.sectionConfiguration.paramEndpoint).subscribe(result => {
-      //         console.log(result)
+              // console.log(result)
       //         this.formStepNavigatorService.saveParamValues(result)
       //       })
       //     }
@@ -85,7 +90,7 @@ export class FormRenderer implements OnInit {
 
   completeSetup(): void {
     this.form = this.formService.getSectionForm(this.sectionConfiguration)
-    console.log('this.form',this.form)
+    // console.log('this.form',this.form)
     this.formStepNavigatorService.saveConfigurationAndForm(this.sectionConfiguration, this.form)
     // This is to set the parent and child question indexes to the last visited indexes if applicable from local storage
     this.formStepNavigatorService.setAllIndexesAndProgress()

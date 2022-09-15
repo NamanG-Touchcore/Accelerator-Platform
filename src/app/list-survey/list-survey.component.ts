@@ -41,9 +41,9 @@ export class ListSurveyComponent implements OnInit {
     //   this.surveyResponses = result;
     //   this.categorizeSurveys()
     //   })
-    console.log(this.openNowSurveys, this.pastSurveys, this.upcomingSurveys, this.surveyResponses)
+    // console.log(this.openNowSurveys, this.pastSurveys, this.upcomingSurveys, this.surveyResponses)
   }
-  
+
   onInfoButtonClick(): void {
     this.displaySignatureInfo = "block"
   }
@@ -155,8 +155,8 @@ export class ListSurveyComponent implements OnInit {
 
 
   onSurveyClick(item: SubjectSurveyResponse, surveyCategory: string): void {
-    console.log('item',item)
-    console.log('item',surveyCategory)
+    // console.log('item',item)
+    // console.log('item',surveyCategory)
     if (surveyCategory == 'past' && this.isSurveyStatusReopened(item)) {
       return
     }

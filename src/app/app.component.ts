@@ -30,7 +30,7 @@ export class AppComponent implements OnInit, AfterContentInit {
     private appConfig: AppConfig,
   ) {
     let preferredLanguage = "en"
-    console.log('preferredLanguege',preferredLanguage)
+    // console.log('preferredLanguege',preferredLanguage)
     translate.use(preferredLanguage);
 
     // if (this.cookieService.get("userLoggedIn") == 'true') {
@@ -49,7 +49,7 @@ export class AppComponent implements OnInit, AfterContentInit {
 
 
   ngAfterContentInit(): void {
-    console.log("call setLoggedInSubjectDetails")
+    // console.log("call setLoggedInSubjectDetails")
     // this.subjectService.setLoggedInSubjectDetails()
   }
 
@@ -79,7 +79,7 @@ export class AppComponent implements OnInit, AfterContentInit {
       let diff = now - this.lastActivityTime;
       // This if block is used to trigger the popup when the app comes from background to foreground
       if (diff > maxInactivity) {
-        //when seconds of inactivity is greater than max inactivity time allowed, modal is shown 
+        //when seconds of inactivity is greater than max inactivity time allowed, modal is shown
         this.triggerModall();
         secondsSinceLastActivity = 0;
         clearInterval(interval);
@@ -88,7 +88,7 @@ export class AppComponent implements OnInit, AfterContentInit {
       secondsSinceLastActivity++;
       // This if block is used to trigger the popup when the app is in foreground but there is no activity in the application
       if (secondsSinceLastActivity > maxInactivity) {
-        //when seconds of inactivity is greater than max inactivity time allowed, modal is shown 
+        //when seconds of inactivity is greater than max inactivity time allowed, modal is shown
         this.triggerModall();
         secondsSinceLastActivity = 0;
         clearInterval(interval);

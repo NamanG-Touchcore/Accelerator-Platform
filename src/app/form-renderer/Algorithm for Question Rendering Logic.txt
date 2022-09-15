@@ -1,0 +1,12 @@
+Algorithm for Question Rendering Logic
+
+1. Get the response for a specific element
+2. For that response, call a function that would
+    a. Check if there is predicate logic
+    b. If there is, then find out all the dependencies
+    c. According to the response, call the function with id of the predicate response question, which would hide all the questions that are between the current question and the predicate target
+    d. If there is a change in a prefilled question, then it would call a function, that would remove the hidden logic from all the questions that are there between the target question and the current question, and then follow 2c.
+
+Internal Logic for question rendering
+1. Have isHidden prop in each question element, which would be data bound
+2. Have a function that would hide the question, and set the isHidden prop to true
