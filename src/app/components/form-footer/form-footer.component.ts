@@ -38,7 +38,7 @@ export class FormFooterComponent implements OnInit {
   displayLoadingModalStyle: string = "none"
   displayActionModal: string = "none"
   displayeConsentModal: string = 'none'
-
+  visible:boolean = true;
   scroll() {
     scrollToTop();
   }
@@ -66,6 +66,10 @@ export class FormFooterComponent implements OnInit {
         this.formStepNavigatorService.onNext()
       }
     })
+    this.formStepNavigatorService.footerVisible.subscribe(result=>{
+      this.visible = result;
+    })
+
   }
 
 
@@ -186,7 +190,7 @@ export class FormFooterComponent implements OnInit {
     return false
   }
 
-  // If the parent question is optional, but child questions are mandatory, it means 
+  // If the parent question is optional, but child questions are mandatory, it means
   // if one mandatory question is answered then other mandatory questions also need to be
   // answered. (i.e. either all mandatory child questions need to be answered or none of them)
   areAllMandatoryQuestionsAnswered(currentStep: any): boolean {

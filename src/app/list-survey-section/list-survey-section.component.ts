@@ -12,6 +12,7 @@ import { DataStorage } from '../utility/storage';
 import { TranslateService } from '@ngx-translate/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Utility } from "../utility/utility";
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-list-survey-section',
@@ -20,7 +21,7 @@ import { Utility } from "../utility/utility";
 })
 export class ListSurveySectionComponent implements OnInit {
 
-  constructor(private CookieService: CookieService, private formService: FormService, private formStepNavigatorService: FormStepNavigator, private route: ActivatedRoute, private router: Router, public translate: TranslateService) { }
+  constructor(private CookieService: CookieService,private deviceService: DeviceDetectorService, private formService: FormService, private formStepNavigatorService: FormStepNavigator, private route: ActivatedRoute, private router: Router, public translate: TranslateService) { }
 
   surveyInternalId: string;
   surveyResponse: SubjectSurveyResponse = null
@@ -92,7 +93,15 @@ export class ListSurveySectionComponent implements OnInit {
       // this.formService.updateSurveySectionStatus(requestPayload, section.id).subscribe(result => {
       // })
       this.formService.setSelectedSurveySection(section)
-      this.router.navigate(['/form', this.surveyInternalId, section.section.internalIdentifier])
+      if(this.deviceService.isMobile() && this.deviceService.isTablet()){
+        this.router.navigate(['/form', this.surveyInternalId, section.section.internalIdentifier], { queryParams: { m: 2 } })
+      }
+      else if(this.deviceService.isDesktop()){
+        this.router.navigate(['/form', this.surveyInternalId, section.section.internalIdentifier], { queryParams: { m: 1 } })
+      }
+      else {
+        this.router.navigate(['/form', this.surveyInternalId, section.section.internalIdentifier], { queryParams: { m: 2 } })
+      }
     }
   }
 

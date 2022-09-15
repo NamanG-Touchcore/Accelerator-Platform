@@ -30,6 +30,7 @@ export class FormStepNavigator {
     hyperLinkClickedStepSubject = new ReplaySubject<any>(1); // This will  emit the step when user clicks on hyperlink in any step
     progressSubject = new ReplaySubject<number>();  // Calculate the progress percentage and send to progress bar component.
     stepsUpdateSubject = new Subject<any>();
+    footerVisible = new Subject<boolean>();
 
     //  Reset all indexes, on completion of section and click on cancel.
     resetAllIndexes(): void {
@@ -811,58 +812,49 @@ export class FormStepNavigator {
         return questionChanged
     }
 
-    displayQuestions(question,responseValue){
-      // this.formService.configuration
-      let SectionSteps;
-      console.log(this.formService.configuration)
-      this.formService.configuration.sections.forEach((element,ind)=>{
-        element.steps.forEach((ele)=>{
-          if(ele.identifier == question.identifier){
-            // console.log('element',element)
-            SectionSteps = element.steps;
-          }
-        })
-      })
+    // displayQuestions(question,responseValue){
+    //   // this.formService.configuration
+    //   let SectionSteps;
+    //   console.log(this.formService.configuration)
+    //   this.formService.configuration.sections.forEach((element,ind)=>{
+    //     element.steps.forEach((ele)=>{
+    //       if(ele.identifier == question.identifier){
+    //         // console.log('element',element)
+    //         SectionSteps = element.steps;
+    //       }
+    //     })
+    //   })
 
-      let nextPredicateQuestion;
-      if(question.navigationRule === 'predicate'){
-        if(question.predicateResults.hasOwnProperty(responseValue)){
-          nextPredicateQuestion = question.predicateResults[responseValue];
-        } else {
-          nextPredicateQuestion = question.defaultStepIdentifier;
-        }
-      }
-      let currentQuestionIndex;
-      currentQuestionIndex = SectionSteps.findIndex(el => el == question)
-      currentQuestionIndex = currentQuestionIndex + 1;
-      let currentQuestion = SectionSteps[currentQuestionIndex]
+    //   let nextPredicateQuestion;
+    //   if(question.navigationRule === 'predicate'){
+    //     if(question.predicateResults.hasOwnProperty(responseValue)){
+    //       nextPredicateQuestion = question.predicateResults[responseValue];
+    //     } else {
+    //       nextPredicateQuestion = question.defaultStepIdentifier;
+    //     }
+    //   }
+    //   let currentQuestionIndex;
+    //   currentQuestionIndex = SectionSteps.findIndex(el => el == question)
+    //   currentQuestionIndex = currentQuestionIndex + 1;
+    //   let currentQuestion = SectionSteps[currentQuestionIndex]
 
-      if(question.isAns){
+    //   if(question.isAns){
 
-      } else {
-        while (currentQuestion.identifier != nextPredicateQuestion) {
-          currentQuestion = SectionSteps[currentQuestionIndex]
-          currentQuestion['isHidden'] = true;
-          currentQuestion = SectionSteps[currentQuestionIndex - 1]
-          currentQuestion['isAns'] = true;
-        }
-      }
-      this.stepsUpdateSubject.next(SectionSteps)
-    }
-
-    // 1
-    // 2
-    // 3
-    //     4 hidden
-    //     5 hidden
-    // =>  6
-    //     7
-
+    //   } else {
+    //     while (currentQuestion.identifier != nextPredicateQuestion) {
+    //       currentQuestion = SectionSteps[currentQuestionIndex]
+    //       currentQuestion['isHidden'] = true;
+    //       currentQuestion = SectionSteps[currentQuestionIndex - 1]
+    //       currentQuestion['isAns'] = true;
+    //     }
+    //   }
+    //   this.stepsUpdateSubject.next(SectionSteps)
+    // }
 
     saveIndividualResponse(questionId: string, responseValue: string, question: any, parentQuestion: any): void {
         // Call our own function, that would traverse through the questions and hide the ones that have opposing predicate logic
         console.log(questionId,question,parentQuestion)
-        this.displayQuestions(question,responseValue)
+        // this.displayQuestions(question,responseValue)
         // this.displayQuestions()
         let loglineRepeatKey = this.formService.getFinalLoglineRepeatKey(question, parentQuestion)
         // Do not consider the logline repeat key from the question Id.
