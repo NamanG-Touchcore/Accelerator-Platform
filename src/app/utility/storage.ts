@@ -29,7 +29,7 @@ export class DataStorage {
 
     public static initializeSurveySectionResponse(sectionResponseId: string, surveyResponseId: string, sectionResponse: SurveySectionResponseItemData[] = []): void {
         let sectionResponses = localStorage.getItem(`${surveyResponseId}_sectionResponses`)
-        console.log('sectionResponse',sectionResponse)
+        // console.log('sectionResponse',sectionResponse)
         let responses = []
         if (!sectionResponses) {
             responses.push(new SectionCompletion(sectionResponseId, sectionResponse))
@@ -66,7 +66,7 @@ export class DataStorage {
         localStorage.setItem(`${surveyResponseId}_sectionResponses`, JSON.stringify(responses))
     }
 
-    // Get  section Responses which have response value 
+    // Get  section Responses which have response value
     public static getSurveySectionResponseValue(sectionResponseId: string, surveyResponseId: string): SectionCompletion {
         let sectionResponses = JSON.parse(localStorage.getItem(`${surveyResponseId}_sectionResponses`))
         if (!sectionResponses) {
@@ -99,7 +99,7 @@ export class DataStorage {
     public static getSurveyQuestionResponse(sectionResponseId: string, itemOId: string, surveyResponseId: string, logLineRepeatKey: number): SurveySectionResponseItemData {
         let response: SurveySectionResponseItemData = null
         itemOId = Utility.extractStringValue(itemOId, "?", 0)
-        console.log('itemOId',itemOId)
+        // console.log('itemOId',itemOId)
         let sectionResponses = localStorage.getItem(`${surveyResponseId}_sectionResponses`)
         if (!sectionResponses) {
             return response
@@ -113,8 +113,6 @@ export class DataStorage {
                 response = sectionResponseItemData[index]
             }
         }
-        console.log('response')
-        console.log(response)
         return response
     }
 

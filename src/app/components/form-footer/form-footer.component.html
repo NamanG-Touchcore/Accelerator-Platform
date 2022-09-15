@@ -1,4 +1,4 @@
-<footer class="fixed-bottom">
+<footer class="fixed-bottom" *ngIf="visible">
     <div class="buttons" *ngIf="!hyperlinkClicked && surveyStarted">
         <button class="btn btn-primary mt-3 mb-3" (click)="onNext(); scroll()" *ngIf="!isLastStep() && !sectionHasExternalHtmlContent()" [disabled]="disableNext()">
             {{getContinueButtonTitle()}}

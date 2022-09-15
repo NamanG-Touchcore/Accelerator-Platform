@@ -54,7 +54,7 @@ export class FormEsignatureComponentComponent implements OnInit {
         this.isVerifying = false
         this.eConsentForm.reset()
       }, error => {
-        console.log("Authentication Failed")
+        // console.log("Authentication Failed")
         this.displayStaticModalStyle = "block"
         this.isUserVerified = false
         this.isVerifying = false
