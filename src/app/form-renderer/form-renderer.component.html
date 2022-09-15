@@ -1,13 +1,12 @@
 <div *ngIf="sectionConfiguration && form" class="topMargin">
-    <span class="ribbon-badge" *ngIf="formService.isSurveyReadOnlyMode()" ><app-form-badge></app-form-badge></span>
+    <span class="ribbon-badge" *ngIf="formService.isSurveyReadOnlyMode()"><app-form-badge></app-form-badge></span>
     <div [formGroup]="form" class="mb-5">
         <div [ngSwitch]="sectionConfiguration.steps[questionIndex] && sectionConfiguration.steps[questionIndex].step">
             <div *ngSwitchCase="'visualConsent'">
                 <p *ngIf="!hyperlinkClicked" class="text-center mt-3 mb-3">
                     {{sectionConfiguration.steps[questionIndex].instructions}}
                 </p>
-                <app-form-visual-consent
-                    [section]="sectionConfiguration.steps[questionIndex].document.sections[childQuestionIndex]">
+                <app-form-visual-consent [section]="sectionConfiguration.steps[questionIndex].document.sections[childQuestionIndex]">
                 </app-form-visual-consent>
             </div>
             <div *ngSwitchCase="'consentReview'">
