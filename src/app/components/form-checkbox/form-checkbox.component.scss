@@ -1,31 +1,32 @@
 @import '../../../variable.scss';
-.question{
+.question {
     @extend .question;
     text-align: justify;
-    padding-left: $padding-left-15;
-    padding-right: $padding-right-15;
+    // padding-left: $padding-left-15;
+    // padding-right: $padding-right-15;
 }
-.form-check-input{
+
+.form-check-input {
     margin-right: $margin-right-10;
 }
-div{
-    .check-box-container{
-      
-        label{
+
+div {
+    .check-box-container {
+        label {
             display: block;
-            border-bottom: 1px solid $checkbox-border-color;
-            margin-bottom: $margin-bottom--2;
+            // border-bottom: 1px solid $checkbox-border-color;
+            // margin-bottom: $margin-bottom--2;
             cursor: pointer;
             word-break: break-word;
-            padding-top: $checkbox-container-margin-top;
-            min-height:$checkbox-container-min-height;
-            margin-bottom: $checkbox-container-margin-bottom;
+            // padding-top: $checkbox-container-margin-top;
+            min-height: $checkbox-container-min-height;
+            // margin-bottom: $checkbox-container-margin-bottom;
             font-weight: $font-600;
-            margin-left:  $margin-left-8;
-            input{
+            margin-left: $margin-left-8;
+            input {
                 visibility: hidden;
             }
-            input + i {
+            input+i {
                 visibility: hidden;
                 color: $primary-color;
                 margin-left: $input-i-margin-left;
@@ -39,71 +40,69 @@ div{
                 vertical-align: top;
                 line-height: $checkbox-span-line-height;
                 width: $checkbox-span-width;
-                font-size:$answer-option-font-size;
+                font-size: $answer-option-font-size;
                 font-weight: $font-600;
                 word-break: break-word;
             }
-            input:checked + i + span{
+            input:checked+i+span {
                 color: $primary-color;
             }
-            input:checked + i {
+            input:checked+i {
                 visibility: visible;
             }
         }
     }
-
-} 
+}
 
 @media screen and (max-width:320px) {
-    div{
-        .check-box-container{
+    div {
+        .check-box-container {
             label {
                 display: block;
-                border-bottom: 1px solid $checkbox-border-color;
+                // border-bottom: 1px solid $checkbox-border-color;
                 margin-bottom: $margin-bottom--2;
                 cursor: pointer;
                 height: auto;
                 word-break: break-word;
-                padding-top: $checkbox-container-margin-top;
+                margin-top: $checkbox-container-margin-top;
                 padding-bottom: $checkbox-container-margin-bottom;
                 font-weight: $font-600;
-                margin-left:  $margin-left-8;
+                margin-left: $margin-left-8;
                 span {
                     width: $checkbox-span-width;
-                    font-size:$answer-option-font-size;
+                    font-size: $answer-option-font-size;
                     font-weight: $font-600;
                     word-break: break-word;
                 }
-                input + i {
+                input+i {
                     margin-top: $input-i-margin-top-0;
                 }
             }
         }
-    } 
-
+    }
 }
-@media (min-width:321px) and (max-width:480px) {
 
-    div{
-        .check-box-container{
+@media (min-width:321px) and (max-width:480px) {
+    div {
+        .check-box-container {
             label {
                 display: block;
-                border-bottom: 1px solid rgba(0,0,0,.1);
+                // border-bottom: 1px solid rgba(0, 0, 0, .1);
                 margin-bottom: $margin-bottom--2;
                 cursor: pointer;
                 height: auto;
                 word-break: break-word;
-                padding-top: $checkbox-container-margin-top;
+                margin-top: $checkbox-container-margin-top;
                 padding-bottom: $checkbox-container-margin-bottom;
                 font-weight: $font-600;
-                margin-left:  $margin-left-8;
+                margin-left: $margin-left-8;
                 span {
                     width: $checkbox-span-width;
-                    font-size:$answer-option-font-size;
+                    font-size: $answer-option-font-size;
                     font-weight: $font-600;
                     word-break: break-word;
                 }
-                input + i {
+                input+i {
                     margin-top: $input-i-margin-top-0;
                 }
             }

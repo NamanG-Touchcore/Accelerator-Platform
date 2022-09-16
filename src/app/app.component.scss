@@ -15,3 +15,9 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
     padding-top: 60px;
 }
+
+@media (min-width:500px) {
+    app-form-header {
+        display: none;
+    }
+}

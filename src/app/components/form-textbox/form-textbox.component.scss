@@ -1,51 +1,63 @@
 @import '../../../variable.scss';
-
 .validation-success {
-  position: absolute;
-  font-size: 1rem;
-  color: #0253a2;
-  text-align: center;
-  top: 0.5rem;
-  right: 1rem;
+    position: absolute;
+    font-size: 1rem;
+    color: #0253a2;
+    text-align: center;
+    top: 1rem;
+    right: 1rem;
 }
 
-.validation-unsuccess{
-  position: absolute;
-  font-size: 1rem;
-  color: #f45229;
-  text-align: center;
-  top: 0.5rem;
-  right: 1rem
+.validation-unsuccess {
+    position: absolute;
+    font-size: 1rem;
+    color: #f45229;
+    text-align: center;
+    top: 1rem;
+    right: 1rem
 }
 
-.question{
-  @extend .question;
+.question {
+    @extend .question;
 }
 
-.border-less-input,.border-less-input:focus,.border-less-input:hover,.border-less-input:focus-visible{
-  border: none;
-  outline: none;
-  width: inherit;
+.border-less-input,
+.border-less-input:focus,
+.border-less-input:hover,
+.border-less-input:focus-visible {
+    border: none;
+    outline: none;
+    width: inherit;
 }
 
-.control-label{
-  width: fit-content;
-  flex-grow: 1;
-  min-width: $control-label-min-width;
-  font-weight: 600;
+.custom-form-control {
+    border: 1px solid #E1DCDC;
+    border-radius: 12px !important;
+    width: 100%;
+    outline: none;
+    height: 2.5rem;
+    padding: 0.5rem;
 }
 
-.inline{
-  display: inline;
-  flex-grow: 1;
-  min-width: 50%;
+.control-label {
+    width: fit-content;
+    flex-grow: 1;
+    min-width: $control-label-min-width;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
-.form-control{
-  min-width: $control-label-min-width;
-  width: auto;
+.inline {
+    display: inline;
+    flex-grow: 1;
+    min-width: 50%;
 }
 
-#displayStaticModal{
-  top: 3rem;
+.form-control {
+    min-width: $control-label-min-width;
+    width: auto;
+}
+
+#displayStaticModal {
+    top: 3rem;
 }

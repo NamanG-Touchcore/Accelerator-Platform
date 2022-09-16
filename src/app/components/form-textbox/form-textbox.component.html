@@ -2,20 +2,18 @@
     <div *ngIf="!formInput.question.answerFormat.multipleLines">
         <div class="" *ngIf="!formInput.question.answerFormat.multipleLines" [formGroup]="formInput.form">
             <div class="row d-flex justify-content-center">
-                <h5 class="text-center"><span *ngIf="isQuestionTextEmpty() && !isOptionalQuestion()"
-                        class="asterisk">*</span>{{formInput.question.title}}</h5>
+                <h5 class="text-center"><span *ngIf="isQuestionTextEmpty() && !isOptionalQuestion()" class="asterisk">*</span>{{formInput.question.title}}</h5>
             </div>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column justify-content-center">
                 <div class="row question w-100 inlineBlock">
+                </div>
+                <div class="row form-group ">
                     <label class="col-6 px-0 mb-0 control-label inline mt-1"><span
                             *ngIf="!isQuestionTextEmpty() && !isOptionalQuestion()"
                             class="asterisk">*</span>{{formInput.question.text}}</label>
 
                     <div class="col-6 px-0 input-group inline">
-                        <input class="border-less-input mt-1" [placeholder]="getPlaceholderText()"
-                            [ngStyle]="{'opacity': disabled ? '0.5' : '1' }"
-                            [ngClass]="{'capitalize': capitalizeWords(), 'uppercase': capitalizeCharachters() }"
-                            [step]="formInput.question.answerFormat.keyboardType === 'decimalPad'? '0.1':'1'"
+                        <input class="custom-form-control mt-1" [placeholder]="getPlaceholderText()" [ngStyle]="{'opacity': disabled ? '0.5' : '1' }" [ngClass]="{'capitalize': capitalizeWords(), 'uppercase': capitalizeCharachters() }" [step]="formInput.question.answerFormat.keyboardType === 'decimalPad'? '0.1':'1'"
                             [type]="type" [formControl]="formInput.form.controls[questionId]" (blur)="onBlur()" />
                         <div *ngIf="validationSuccessfull===true && !isEmptyResponse()" class="input-group-append">
                             <span class="input-group-append">
@@ -39,16 +37,13 @@
 </div>
 
 <!--  Static modal is used for showing validation error messages -->
-<div class="modal" id="displayStaticModal" tabindex="-1" aria-hidden="true" role="dialog"
-    [ngStyle]="{'display':displayStaticModalStyle}">
-    <app-form-static-modal [message]="getInvalidMessage()" (done)="onStaticModalClose()" [title]="getStaticModalTitle()"
-        footer="{{'content.cancel' | translate }}">
+<div class="modal" id="displayStaticModal" tabindex="-1" aria-hidden="true" role="dialog" [ngStyle]="{'display':displayStaticModalStyle}">
+    <app-form-static-modal [message]="getInvalidMessage()" (done)="onStaticModalClose()" [title]="getStaticModalTitle()" footer="{{'content.cancel' | translate }}">
     </app-form-static-modal>
 </div>
 
 <!--  Loader modal is used for showing loading messages -->
-<div class="modal" id="displayStaticModal" tabindex="-1" aria-hidden="true" role="dialog"
-    [ngStyle]="{'display':displayLoadingModalStyle}">
+<div class="modal" id="displayStaticModal" tabindex="-1" aria-hidden="true" role="dialog" [ngStyle]="{'display':displayLoadingModalStyle}">
     <app-form-loader-modal [message]="getLoadingMessage()">
     </app-form-loader-modal>
 </div>

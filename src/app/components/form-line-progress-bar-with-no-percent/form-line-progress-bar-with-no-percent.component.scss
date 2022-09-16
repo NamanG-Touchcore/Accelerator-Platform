@@ -1,22 +1,22 @@
 .progress {
-  color: #000!important;
-  position: fixed;
-  top: 2.90rem;
-  z-index: 1050;
-  width: 100vw;
-  height: 4px;
-  left: 0;
-  right: 0;
-  background-color: #d0d0d0;
+    color: #000!important;
+    // position: fixed;
+    // top: 2.90rem;
+    z-index: 1050;
+    // width: 100vw;
+    height: 10px;
+    // left: 0;
+    // right: 0;
+    background-color: #d0d0d0;
 }
 
-#progress-bar-line > span{
-  position: absolute;
-  top: 8.5px;
-  right: 35px;
-  color: #075296;
+#progress-bar-line>span {
+    position: absolute;
+    top: 8.5px;
+    right: 35px;
+    color: #18A0FB;
 }
 
-.progress-bar{
-  background-color: #075296;
+.progress-bar {
+    background-color: #18A0FB;
 }

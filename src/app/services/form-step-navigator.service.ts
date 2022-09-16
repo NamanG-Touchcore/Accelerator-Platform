@@ -186,6 +186,7 @@ export class FormStepNavigator {
     }
 
     calculateIndependentChildQuestionProgressPercentage(): void {
+        console.log('call independent child question')
         let nestedStepCount = this.getNestedStepCount(0, this.questionIndex)
         this.progressPercent = (this.questionIndex + this.childQuestionIndex + nestedStepCount + 1) * this.stepInterval
         this.progressSubject.next(this.progressPercent)
@@ -854,6 +855,7 @@ export class FormStepNavigator {
     saveIndividualResponse(questionId: string, responseValue: string, question: any, parentQuestion: any): void {
         // Call our own function, that would traverse through the questions and hide the ones that have opposing predicate logic
         console.log(questionId,question,parentQuestion)
+        this.calculateIndependentChildQuestionProgressPercentage()
         // this.displayQuestions(question,responseValue)
         // this.displayQuestions()
         let loglineRepeatKey = this.formService.getFinalLoglineRepeatKey(question, parentQuestion)

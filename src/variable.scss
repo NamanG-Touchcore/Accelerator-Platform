@@ -37,10 +37,12 @@ $badge-light-color:#666;
 $badge-light-background:#f2f5f9;
 
 /*Complition Component CSS*/
+
 $complition-icon-font-size:2.5rem;
 $complete-icon-font-size:10rem;
 
 /*Modal Popup style*/
+
 $modal-border-color:#dee2e6;
 $modal-title-width:100%;
 $button-background-color:#fff;
@@ -58,8 +60,11 @@ $padding-0:0px;
 $border-radious-0:0px;
 $body-margin-bottom:110px;
 $p-font-size:14px;
+
 /*Header Style*/
-$survey-header-box-shadow:rgb(0 0 0 / 9%) 0px 3px 2px, rgb(146 209 213 / 35%) 0px 2px 2px;
+
+$survey-header-box-shadow:rgb(0 0 0 / 9%) 0px 3px 2px,
+rgb(146 209 213 / 35%) 0px 2px 2px;
 $survey-header-background-color:$secondary-background-color;
 $icon-color:$primary-color;
 $survey-header-padding:5px 15px;
@@ -86,7 +91,9 @@ $language-dropdown-menu-width:280px;
 $language-dropdown-menu-left:-200px;
 $language-dropdown-menu-top:35px;
 $language-dropdown-menu-max-height: 300px;
-$language-dropdown-menu-max-box-shadow:  0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+$language-dropdown-menu-max-box-shadow : 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+0 1px 10px 0 rgba(0, 0, 0, 0.12),
+0 2px 4px -1px rgba(0, 0, 0, 0.3);
 $language-dropdown-wrapper-width: 85px;
 $language-dropdown-wrapper-height: 40px;
 $language-dropdown-wrapper-top: -10px;
@@ -96,7 +103,9 @@ $language-trigger-dropdown-line-height: 22px;
 $language-dropdown-item-font-size: 1rem;
 $language-dropdown-item-height: 50px;
 $language-dropdown-item-padding: 0 20px;
+
 /*Footer CSS*/
+
 $border-less-next-btn-padding:7px 20px;
 $border-less-next-btn-width:72px;
 $bottom-right-next-btn-height:40px;
@@ -108,11 +117,13 @@ $botton-border-radious:6px;
 $border-less-next-btn-disabled-opacity:0.5;
 
 /*Checkbox CSS*/
+
 $margin-right-10:10px;
-$checkbox-border-color:rgba(0,0,0,.1);
+$checkbox-border-color:rgba(0, 0, 0, .1);
 $margin-bottom--2:-2px;
 $margin-bottom--6:-6px;
-$checkbox-container-min-height:40px;
+$checkbox-container-min-height:20px;
+// $checkbox-container-min-height:40px;
 $checkbox-container-margin-top:1rem;
 $checkbox-container-margin-bottom:1rem;
 $input-i-margin-left:-0.5em;
@@ -125,9 +136,11 @@ $input-i-margin-top-0:0px;
 $answer-option-font-size:1.1rem;
 
 /*Loader*/
+
 $loading-text-font-size:1.2rem;
 
 /*List Survey Section*/
+
 $section-display-margin:20px 0px;
 $section-display-margin-top:80px;
 $section-display-z-index:999;
@@ -177,10 +190,13 @@ $web-icon-for-now-section-margin-left: -1.7rem;
 $web-icon-for-now-section-margin-right: 0.55rem;
 
 /*List Survey*/
+
 $survey-display-margin-top:30px;
 $listed-surveys-margin-left:14px;
 $expiry-text-color:#c41e1e;
+
 /*Image Selection*/
+
 $image-selection-img-max-height:4rem;
 $image-selection-img-max-width:4rem;
 $border-black:#000;
@@ -188,18 +204,23 @@ $vertical-image-selection-img-max-height:6rem;
 $vertical-image-selection-img-max-width:6rem;
 
 /*Static Survey Header*/
+
 $static-survey-header-padding:10px 0px;
 
 /*Static Custom Section*/
+
 $img-margin:0px auto;
 
 /*Static Email*/
+
 $error-msg-color:red;
 
 /*File Upload*/
+
 $file-input-padding:.2em .6em;
 
 /*Line Progress Bar*/
+
 $progress-color:#000;
 $progress-top:2.5rem;
 $progress-z-index:1050;
@@ -211,6 +232,7 @@ $progress-span-top: 8.5px;
 $progress-span-right:28px;
 
 /*Textscale - with Radio Button*/
+
 $scale-container-padding:40px 30px;
 $scale-container-label-bottom-margin:-2px;
 $scale-container-label-bottom-padding-mobile:1.5rem;
@@ -235,6 +257,7 @@ $input-mark-left:23px;
 $input-mark-z-index:99;
 
 /*Text Scale with Range Slider*/
+
 $slide-container-margin-left:-148px;
 $slide-container-margin-top:38px;
 $ul-labels-margin-left:73px;
@@ -256,8 +279,9 @@ $moz-slider-thumb-height:16px;
 $moz-slider-thumb-width:16px;
 
 /*Badge */
+
 $badge-pill-background:#808080;
-$badge-pill-border-radius:6px 6px 6px 0px ;
+$badge-pill-border-radius:6px 6px 6px 0px;
 $badge-pill-margin:14.8px 0px 0px -1px;
 $badge-pill-letter-spacing:1px;
 $badge-pill-padding: 2.5px 5px 0px 5px;
@@ -267,6 +291,7 @@ $badge-pill-line-height:1.25;
 $badge-pill-font-size:0.62rem;
 
 /* Loader */
+
 $loading-text-color:#4b749b;
 $loader-font-size:1.2rem;
 $loading-svg-top:0;
@@ -316,7 +341,7 @@ $select-option-color: #223254;
 $select-display: none;
 $select-outline: none;
 $select-border-color: #0056a5;
-$select-box-shadow: 0 0 0 2px rgba(0,119,255,0.2);
+$select-box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
 $select-stroke: #0056a5;
 $select-sprites-position: absolute;
 $select-sprites-width: 0;
@@ -325,6 +350,7 @@ $select-sprites-pointer-events: none;
 $select-sprites-user-select: none;
 
 /*Expiry date range colors*/
+
 $danger-text:#cf1313;
 $warning-text:#f16e05;
 $message-text:gray;
