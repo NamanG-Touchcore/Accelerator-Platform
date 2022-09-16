@@ -35,6 +35,9 @@ export class FormRendererContainerComponent implements OnInit {
   formHeaderPagination: string = '';
   sectionInternalId: string = '';
   surveyInternalId: string = '';
+  next:boolean=false;
+  prev:boolean=false;
+
   ngOnInit(): void {
     console.log(
       'this.formService.configuration',
@@ -66,6 +69,7 @@ export class FormRendererContainerComponent implements OnInit {
     if (sectionIndex == this.formService.configuration.sections.length - 1) {
       return;
     } else {
+      this.next=(sectionIndex == this.formService.configuration.sections.length - 2)?true:false;
       this.sectionInternalId =
         this.formService.configuration.sections[sectionIndex + 1].identifier;
       if (this.deviceService.isMobile() && this.deviceService.isTablet()) {
@@ -86,10 +90,18 @@ export class FormRendererContainerComponent implements OnInit {
       }
     }
   }
+
+  checkNext(){
+    let sectionIndex = this.getCurrentSectionIndex();
+    return (sectionIndex == this.formService.configuration.sections.length - 1)?true:false;
+  }
+  checkPrev(){
+    let sectionIndex = this.getCurrentSectionIndex();
+    return (sectionIndex <=0)?true:false;
+    
+  }
   onPrev(): void {
-    let sectionIndex = this.formService.configuration.sections.findIndex(
-      (el) => el.identifier == this.sectionInternalId
-    );
+    let sectionIndex=this.getCurrentSectionIndex();
     console.log('sectionIndex');
     if (sectionIndex == 0) {
       return;

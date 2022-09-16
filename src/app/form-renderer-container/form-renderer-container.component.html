@@ -12,18 +12,16 @@
             <div class="progress-bar-parent">
                 <app-form-line-progress-bar-with-no-percent></app-form-line-progress-bar-with-no-percent>
             </div>
-            <button class="nav-btn prev-btn" (click)="onPrev()">
+            <button class="nav-btn prev-btn" (click)="onPrev()" [disabled]="checkPrev()">
                 <i class="fa-solid fa-arrow-left"></i>
             </button>
-            <button class="nav-btn next-btn" (click)="onNext()">
+            <button class="nav-btn next-btn" (click)="onNext()" [disabled]="checkNext()">
               <i class="fa-solid fa-arrow-right"></i>
             </button>
         </div>
     </div>
-    <div class="col-12 col-md-3">
+    <div class="col-12 col-md-3 third-col ">
+        &nbsp;
+
     </div>
 </div>
-
-
-
-
