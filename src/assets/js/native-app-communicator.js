@@ -1,5 +1,5 @@
 console.log("window Mainstream")
-window.communicationname.postMessage('{"screen" : "MAIN_SCREEN","action" : "READY"}')
+// window.communicationname.postMessage('{"screen" : "MAIN_SCREEN","action" : "READY"}')
 
 function setUserDetails(userDetails) {
     let parsedUserDetails = JSON.parse(userDetails)
