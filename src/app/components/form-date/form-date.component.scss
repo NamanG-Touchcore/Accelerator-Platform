@@ -5,12 +5,6 @@
     border-radius: 12px;
 }
 
-.border-less-date:focus {
-    border: none;
-    border-bottom: 1px solid $input-border-color;
-    box-shadow: none;
-}
-
 input[type="date"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;

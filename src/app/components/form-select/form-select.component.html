@@ -1,5 +1,5 @@
 <div *ngIf="formInput.question" class="form-group" [formGroup]="formInput.form">
-    <h5 class="mt-3 row mb-3 ml-3 "><span *ngIf="isQuestionTextEmpty() && !isOptionalQuestion()" class="asterisk">*</span>{{formInput.question.title}}</h5>
+    <h5 class="mt-3 row mb-3 ml-3 " *ngIf="formInput.question.title"><span *ngIf="isQuestionTextEmpty() && !isOptionalQuestion()" class="asterisk">*</span>{{formInput.question.title}}</h5>
     <div class="row inlineBlock">
         <label class="col-6 px-0 control-label font-weight-bold question border-bottom-0"><span *ngIf="!isQuestionTextEmpty() && !isOptionalQuestion()" class="asterisk">*</span>{{formInput.question.text}}</label>
         <div class="this" *ngIf="!isDependentQuestion()">

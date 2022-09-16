@@ -59,7 +59,7 @@
     .progress-bar-container {
         position: fixed;
         bottom: 4px;
-        width: 40rem;
+        width: inherit;
         height: 20px;
         // width: 100%;
         left: 50%;
@@ -107,7 +107,8 @@
         .primary-div {
             height: 100vh;
             background-color: white;
-            align-items: center;
+            padding-top: 40px;
+            // align-items: center;
         }
         .card-parent {
             flex: 1;

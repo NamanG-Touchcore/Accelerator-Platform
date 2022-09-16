@@ -10,8 +10,8 @@
             <span>{{opt.text}}</span>
         </label> -->
         <div class="custom-control custom-radio" [ngStyle]="{'opacity': disabled ? '0.5' : '1' }" *ngFor="let opt of formInput.question.answerFormat.textChoices">
-            <input type="radio" class="custom-control-input" (change)="onChange()" [formControl]="formInput.form.controls[questionId]" [name]="questionId" [value]="opt.value" [id]="opt.value" />
-            <label class="custom-control-label" [for]="opt.value">
+            <input type="radio" class="custom-control-input" (change)="onChange()" [formControl]="formInput.form.controls[questionId]" [name]="questionId" [value]="opt.value" [id]="opt.value.toString()+questionId.toString()" />
+            <label class="custom-control-label" [for]="opt.value.toString()+questionId.toString()">
                 {{opt.text}} </label>
         </div>
     </div>

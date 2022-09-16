@@ -57,11 +57,10 @@ div {
         .radio-box-container {
             label {
                 display: block;
-                border-bottom: 1px solid $checkbox-border-color;
                 margin-bottom: $margin-bottom--2;
                 cursor: pointer;
                 height: auto;
-                padding-top: $checkbox-container-margin-top;
+                margin-top: $checkbox-container-margin-top;
                 padding-bottom: $checkbox-container-margin-bottom;
                 font-weight: $font-600;
                 margin-left: $margin-left-8;
@@ -85,12 +84,12 @@ div {
         .radio-box-container {
             label {
                 display: block;
-                border-bottom: 1px solid rgba(0, 0, 0, .1);
+                // border-bottom: 1px solid rgba(0, 0, 0, .1);
                 margin-bottom: $margin-bottom--2;
                 cursor: pointer;
                 height: auto;
                 word-break: break-word;
-                padding-top: $checkbox-container-margin-top;
+                margin-top: $checkbox-container-margin-top;
                 padding-bottom: $checkbox-container-margin-bottom;
                 font-weight: $font-600;
                 margin-left: $margin-left-8;
