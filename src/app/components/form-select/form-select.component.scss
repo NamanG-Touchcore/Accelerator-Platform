@@ -1,41 +1,47 @@
-
 @import '../../../variable.scss';
-
-.border-less-select{
-  border: none;
-  border-bottom: 0px solid $input-border-color;
-  min-width: $input-min-length;
-  max-width: $width-100;
-  text-align: left;
-  border-radius: $border-radious-0;
-}
-.border-less-select:focus{
-  border: none;
-  border-bottom: 0px solid $input-border-color;
-  box-shadow: none;
-}
-.text-center{
-  justify-content: center;
-}
-.control-label{
-  width: fit-content;
-  flex-grow: 1;
-  min-width: $control-label-min-width;
-  font-weight: $font-600;
+.border-less-select {
+    border: none;
+    border-bottom: 0px solid $input-border-color;
+    min-width: $input-min-length;
+    max-width: $width-100;
+    text-align: left;
 }
 
-.question{
-  font-size: $body-font-size;
-  font-weight: $font-400;
-  text-align: justify;
+select {
+    border-radius: 12px;
+    height: 40px;
 }
 
-.inline{
-  display: inline;
+.border-less-select:focus {
+    border: none;
+    border-bottom: 0px solid $input-border-color;
+    box-shadow: none;
 }
+
+.text-center {
+    justify-content: center;
+}
+
+.control-label {
+    width: fit-content;
+    flex-grow: 1;
+    min-width: $control-label-min-width;
+    font-weight: $font-600;
+}
+
+.question {
+    font-size: $body-font-size;
+    font-weight: $font-400;
+    text-align: justify;
+}
+
+.inline {
+    display: inline;
+}
+
 .row {
-  *{
-    padding-left: $padding-left-0;
-    padding-right: $padding-right-0;
-  }
+    * {
+        padding-left: $padding-left-0;
+        padding-right: $padding-right-0;
+    }
 }

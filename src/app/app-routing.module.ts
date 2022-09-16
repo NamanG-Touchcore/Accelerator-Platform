@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { StaticComponentRendererComponent } from './static-component-renderer/static-component-renderer.component';
 import { SubjectRegistrationComponent } from './subject-registration/subject-registration.component';
 import { SubjectProfileComponent } from './subject-profile/subject-profile.component';
+import { FormRendererContainerComponent } from './form-renderer-container/form-renderer-container.component';
 const routes: Routes = [{
   path: 'legalStatement', component: LegalStatementComponent
 }, {
@@ -15,7 +16,7 @@ const routes: Routes = [{
 }, {
   path: 'sections/:surveyInternalId', component: ListSurveySectionComponent
 }, {
-  path: 'form/:surveyInternalId/:sectionInternalId', component: FormRenderer
+  path: 'form/:surveyInternalId/:sectionInternalId', component: FormRendererContainerComponent
 }, {
   path: 'static', component: StaticComponentRendererComponent
 }, {

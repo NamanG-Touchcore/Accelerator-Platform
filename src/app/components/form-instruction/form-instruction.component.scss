@@ -1,5 +1,10 @@
 @import '../../../variable.scss';
+@media (max-width:500px) {
+    .instruction {
+        margin-top: $instruction-margin-top;
+    }
+}
+
 .instruction {
-   margin-top: $instruction-margin-top;
-   text-align: center;
+    text-align: center;
 }

@@ -1,6 +1,6 @@
 <div *ngIf="sectionConfiguration && form && mode==1" class="topMargin">
     <span class="ribbon-badge" *ngIf="formService.isSurveyReadOnlyMode()"><app-form-badge></app-form-badge></span>
-    <div [formGroup]="form" class="mb-5" *ngFor="let step of sectionConfiguration.steps">
+    <div [formGroup]="form" *ngFor="let step of sectionConfiguration.steps">
         <div *ngIf="!step.isHidden">
             <div [ngSwitch]="step && step.step">
                 <div *ngSwitchCase="'visualConsent'">
@@ -37,7 +37,7 @@
 </div>
 <div *ngIf="sectionConfiguration && form && mode!=1" class="topMargin">
     <span class="ribbon-badge" *ngIf="formService.isSurveyReadOnlyMode()"><app-form-badge></app-form-badge></span>
-    <div [formGroup]="form" class="mb-5">
+    <div [formGroup]="form">
         <div [ngSwitch]="sectionConfiguration.steps[questionIndex] && sectionConfiguration.steps[questionIndex].step">
             <div *ngSwitchCase="'visualConsent'">
                 <p *ngIf="!hyperlinkClicked" class="text-center mt-3 mb-3">

@@ -16,7 +16,9 @@ export class FormRadioComponent implements OnInit, OnChanges {
   disabled: boolean = false
   ngOnInit(): void {
   }
-
+getString(obj): string {
+    return JSON.stringify(obj)
+  }
   ngOnChanges(): void {
     let logLineRepeatKey = this.formService.getFinalLoglineRepeatKey(this.formInput.question, this.formInput.parentQuestion)
     this.questionId = `${this.formInput.question.identifier}@${logLineRepeatKey}`
@@ -27,6 +29,8 @@ export class FormRadioComponent implements OnInit, OnChanges {
   }
 
   onChange() {
+    console.log('on change')
+    console.log(this.formInput)
     this.formStepNavigatorService.saveIndividualResponse(this.questionId, this.formInput.form.value[this.questionId], this.formInput.question, this.formInput.parentQuestion)
   }
 

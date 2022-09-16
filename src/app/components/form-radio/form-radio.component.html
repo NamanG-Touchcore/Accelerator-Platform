@@ -3,12 +3,16 @@
     <div class="question row"><span *ngIf="!isQuestionTextEmpty() && !isOptionalQuestion()" class="asterisk">*</span>{{formInput.question.text}}
     </div>
     <div class="radio-box-container">
-        <label class="" [ngStyle]="{'opacity': disabled ? '0.5' : '1' }"
-            *ngFor="let opt of formInput.question.answerFormat.textChoices">
-            <input type="radio" class="" (change)="onChange()" [formControl]="formInput.form.controls[questionId]"
+        <!-- <label class="custom-control-label" [ngStyle]="{'opacity': disabled ? '0.5' : '1' }" *ngFor="let opt of formInput.question.answerFormat.textChoices">
+            <input type="radio" class="custom-control-input" (change)="onChange()" [formControl]="formInput.form.controls[questionId]"
                 [name]="questionId" [value]="opt.value" />
             <i class="fa fa-check"></i>
             <span>{{opt.text}}</span>
-        </label>
+        </label> -->
+        <div class="custom-control custom-radio" [ngStyle]="{'opacity': disabled ? '0.5' : '1' }" *ngFor="let opt of formInput.question.answerFormat.textChoices">
+            <input type="radio" class="custom-control-input" (change)="onChange()" [formControl]="formInput.form.controls[questionId]" [name]="questionId" [value]="opt.value" [id]="opt.value" />
+            <label class="custom-control-label" [for]="opt.value">
+                {{opt.text}} </label>
+        </div>
     </div>
 </div>

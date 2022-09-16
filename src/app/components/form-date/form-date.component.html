@@ -1,16 +1,13 @@
-<div *ngIf="formInput.question" class="form-group" [formGroup]="formInput.form">
+<div *ngIf="formInput.question" class="form-group " [formGroup]="formInput.form">
     <h5 class=" mt-3 mb-3"><span *ngIf="isQuestionTextEmpty() && !isOptionalQuestion()" class="asterisk">*</span>{{formInput.question.title}}</h5>
     <label class="ml-1 control-label font-weight-bold question border-bottom-0 row"><span *ngIf="!isQuestionTextEmpty() && !isOptionalQuestion()" class="asterisk">*</span>{{formInput.question.text}}</label>
-    <input [placeholder]="getPlaceholderText()" type="date" (blur)="onBlur()"
-        [ngStyle]="{'opacity': disabled ? '0.5' : '1' }" [formControl]="formInput.form.controls[questionId]"
-        [min]="minimumDate" [max]="maximumDate" class="form-control px-0 border-less-date" />
+    <input [placeholder]="getPlaceholderText()" type="date" (blur)="onBlur()" [ngStyle]="{'opacity': disabled ? '0.5' : '1' }" [formControl]="formInput.form.controls[questionId]" [min]="minimumDate" [max]="maximumDate" class="form-control px-0 border-less-date"
+    />
 </div>
 
 
 <!--  Static modal is used for showing validation error messages -->
-<div class="modal" id="displayStaticModal" tabindex="-1" aria-hidden="true" role="dialog"
-    [ngStyle]="{'display':displayModalStyle}">
-    <app-form-static-modal [message]="getInvalidMessage()" (done)="onModalClose()" title="{{'content.invalidValue' | translate }}"
-        footer="{{'content.cancel' | translate }}">
+<div class="modal" id="displayStaticModal" tabindex="-1" aria-hidden="true" role="dialog" [ngStyle]="{'display':displayModalStyle}">
+    <app-form-static-modal [message]="getInvalidMessage()" (done)="onModalClose()" title="{{'content.invalidValue' | translate }}" footer="{{'content.cancel' | translate }}">
     </app-form-static-modal>
 </div>

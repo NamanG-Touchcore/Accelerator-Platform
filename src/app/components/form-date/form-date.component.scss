@@ -1,23 +1,28 @@
 @import '../../../variable.scss';
-
-.border-less-date{
-    border: none;
-    border-bottom: 1px solid $input-border-color;
+.border-less-date {
+    border: 1px solid $input-border-color;
     min-width: $input-min-length;
-    border-radius: $input-border-radius;
-  }
-  .border-less-date:focus{
+    border-radius: 12px;
+}
+
+.border-less-date:focus {
     border: none;
     border-bottom: 1px solid $input-border-color;
     box-shadow: none;
-  }
-
-input[type="date"]{
-  -webkit-appearance: textfield;
- -moz-appearance: textfield;
- min-height: 1.2em; 
 }
 
-.form-group > label{
-  font-weight: $font-600;
+input[type="date"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    min-height: 1.2em;
+    height: 40px;
+}
+
+.form-group {
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.form-group>label {
+    font-weight: $font-600;
 }
