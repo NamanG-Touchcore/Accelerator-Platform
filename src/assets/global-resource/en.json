@@ -105,8 +105,8 @@
         "PFQ5TO14PROXYV2": "FOP-Physical Functioning Questionnaire - Parent Proxy for Ages 5 to 14",
         "PFQ2TO4PROXYV2": "FOP-Physical Functioning Questionnaire - Parent Proxy for Ages 2 to 4",
         "PFQ8TO14SELFV2": "FOP-Physical Functioning Questionnaire - Self for Ages 8 to 14",
-        "CUSTOMFORM1": "Custom Form 1",
-        "CUSTOMFORM2": "Custom Form 2",
+        "CUSTOMFORM1": "Patient Form 1",
+        "CUSTOMFORM2": "Patient Form 2",
         "CUSTOMFORM3": "Custom Form 3",
         "CUSTOMFORM4": "Custom Form 4"
     }
