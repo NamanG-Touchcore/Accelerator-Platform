@@ -1,6 +1,7 @@
 <div class="primary-div row my-0">
     <div class="col-12 d-none d-md-flex flex-column col-md-3 survey-info-header">
-        <h1>{{getHeaderTitle()}}</h1>
+        <h1><span class="section-title">{{formService.readSurveyFromJson(surveyResponse.survey.internalIdentifier, surveyResponse.survey.initiatingEventInterval, surveyResponse.responseOrdinal)}}
+          &nbsp;</span></h1>
         <span>Section {{getCurrentSection()}} of {{getTotalSections()}}</span>
     </div>
     <div class="col-12 col-md-6 card-parent">

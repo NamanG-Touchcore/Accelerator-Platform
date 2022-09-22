@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 import { NavigationStart, Router, ActivatedRoute } from '@angular/router';
 import { FormService } from 'src/app/services/form.service';
 import { SubjectService } from 'src/app/services/subject.service';
-import { DataStorage } from 'src/app/utility/storage';
+import { SubjectSurveyResponse } from '../models/subject-survey-response.model';
 import { TranslateService } from '@ngx-translate/core';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
@@ -18,7 +18,7 @@ declare const sendMessageToFlutter: any;
 export class FormRendererContainerComponent implements OnInit {
   constructor(
     public formStepNavigatorService: FormStepNavigator,
-    private formService: FormService,
+    public formService: FormService,
     private location: Location,
     private route: Router,
     private subjectService: SubjectService,
@@ -37,17 +37,22 @@ export class FormRendererContainerComponent implements OnInit {
   surveyInternalId: string = '';
   next:boolean=false;
   prev:boolean=false;
+  surveyResponse: any = null;
 
   ngOnInit(): void {
-    console.log(
-      'this.formService.configuration',
-      this.formService.configuration
-    );
-    this.router.params.subscribe((params) => {
-      let sectionInternalId = params['sectionInternalId'];
-      let surveyInternalId = params['surveyInternalId'];
-      this.sectionInternalId = sectionInternalId;
-      this.surveyInternalId = surveyInternalId;
+    // console.log(
+      //   'this.formService.configuration',
+      //   this.formService.configuration
+      // );
+      if (!this.formService.configuration) {
+        // this.route.navigate(['']);
+        this.formService.setSurveyConfiguration('')
+      }
+      this.router.params.subscribe((params) => {
+        this.sectionInternalId = params['sectionInternalId'];
+        this.surveyInternalId = params['surveyInternalId'];
+        this.surveyResponse = this.formService.getOpenedSurvey(this.surveyInternalId)
+        console.log(this.surveyResponse.survey.initiatingEventInterval)
     });
   }
   getCurrentSection(): number {
@@ -65,7 +70,7 @@ export class FormRendererContainerComponent implements OnInit {
   }
   onNext(): void {
     let sectionIndex = this.getCurrentSectionIndex();
-    console.log(sectionIndex);
+    // console.log(sectionIndex);
     if (sectionIndex == this.formService.configuration.sections.length - 1) {
       return;
     } else {
@@ -98,11 +103,11 @@ export class FormRendererContainerComponent implements OnInit {
   checkPrev(){
     let sectionIndex = this.getCurrentSectionIndex();
     return (sectionIndex <=0)?true:false;
-    
+
   }
   onPrev(): void {
     let sectionIndex=this.getCurrentSectionIndex();
-    console.log('sectionIndex');
+    // console.log('sectionIndex');
     if (sectionIndex == 0) {
       return;
     } else {

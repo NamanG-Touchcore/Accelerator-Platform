@@ -36,7 +36,8 @@ export class FormRenderer implements OnInit {
 
   ngOnInit(): void {
     if (!this.formService.configuration) {
-      this.router.navigate(['']);
+      // this.route.navigate(['']);
+      this.formService.setSurveyConfiguration('')
     }
     this.route.queryParams.subscribe((params) => {
       console.log(params); // { order: "popular" }
@@ -49,6 +50,7 @@ export class FormRenderer implements OnInit {
     });
     this.route.params.subscribe((params) => {
       let sectionInternalId = params['sectionInternalId'];
+      // console.log(sectionInternalId)
       this.setupConfiguration(sectionInternalId);
     });
     this.formStepNavigatorService.childQuestionIndexSubject.subscribe(
@@ -67,12 +69,12 @@ export class FormRenderer implements OnInit {
         this.hyperlinkClicked = isLinkClicked;
       }
     );
-    this.formStepNavigatorService.stepsUpdateSubject.subscribe((updates) => {
-      // this.sectionConfiguration.steps = updates;
-      console.log(this.sectionConfiguration.steps);
-    });
+    // this.formStepNavigatorService.stepsUpdateSubject.subscribe((updates) => {
+    //   // this.sectionConfiguration.steps = updates;
+    //   // console.log(this.sectionConfiguration.steps);
+    // });
     // console.log(this.formService.configuration)
-    console.log(this.sectionConfiguration.steps);
+    console.log('this.sectionConfiguration',this.sectionConfiguration);
   }
 
   setupConfiguration(sectionInternalId: string): void {
@@ -108,12 +110,14 @@ export class FormRenderer implements OnInit {
   completeSetup(): void {
     this.form = this.formService.getSectionForm(this.sectionConfiguration);
     // console.log('this.form',this.form)
+    // console.log('this.sectionConfiguration',this.sectionConfiguration)
+    // console.log('this.form',this.form)
     this.formStepNavigatorService.saveConfigurationAndForm(
       this.sectionConfiguration,
       this.form
     );
     // This is to set the parent and child question indexes to the last visited indexes if applicable from local storage
-    this.formStepNavigatorService.setAllIndexesAndProgress();
+    // this.formStepNavigatorService.setAllIndexesAndProgress();
     this.formStepNavigatorService.setInitialHtmlContent();
   }
 }

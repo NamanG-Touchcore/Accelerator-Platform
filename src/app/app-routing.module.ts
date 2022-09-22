@@ -9,26 +9,39 @@ import { StaticComponentRendererComponent } from './static-component-renderer/st
 import { SubjectRegistrationComponent } from './subject-registration/subject-registration.component';
 import { SubjectProfileComponent } from './subject-profile/subject-profile.component';
 import { FormRendererContainerComponent } from './form-renderer-container/form-renderer-container.component';
+import { IFrameComponent } from './i-frame/i-frame.component';
 const routes: Routes = [{
   path: 'legalStatement', component: LegalStatementComponent
 }, {
   path: 'surveys', component: ListSurveyComponent
-}, {
+},
+{
+ path: 'iframe', component: IFrameComponent
+},
+{
   path: 'sections/:surveyInternalId', component: ListSurveySectionComponent
-}, {
+},
+ {
   path: 'form/:surveyInternalId/:sectionInternalId', component: FormRendererContainerComponent
-}, {
+},
+ {
+  path: 'form-iframe/:surveyInternalId/:sectionInternalId', component: FormRenderer
+},
+{
   path: 'static', component: StaticComponentRendererComponent
 }, {
   path: 'subjectRegistration', component: SubjectRegistrationComponent
 }, {
   path: 'subjectProfile', component: SubjectProfileComponent
-}, {
+},
+{
   path: '', redirectTo: '/surveys', pathMatch: "prefix"
-},];
+},
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes)],
+  // imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
