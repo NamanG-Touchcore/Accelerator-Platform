@@ -160,6 +160,7 @@ export class ListSurveyComponent implements OnInit {
     if (surveyCategory == 'past' && this.isSurveyStatusReopened(item)) {
       return
     }
+    console.log('item.survey.id',item.survey)
     let surveyConfigurationPromise = this.formService.setSurveyConfiguration(item.survey.id)
     let observablesArray: Observable<any>[] = [surveyConfigurationPromise]
     if (!this.isSurveyStarted(item) && !this.formService.isSurveyPast(item)) {

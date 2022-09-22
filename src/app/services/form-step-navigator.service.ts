@@ -748,10 +748,10 @@ export class FormStepNavigator {
         if (this.childQuestionIndex === 0 && this.hasNestedSections(this.getCurrentStep())) {
             this.setHTMLContent(this.getCurrentStep())
         }
-        let displayTextParam = this.getParamActionDisplayText()
-        if (displayTextParam) {
-            this.setDisplayText(displayTextParam, this.getCurrentStep())
-        }
+        // let displayTextParam = this.getParamActionDisplayText()
+        // if (displayTextParam) {
+        //     this.setDisplayText(displayTextParam, this.getCurrentStep())
+        // }
         if (this.isLastStep()) {
             this.onCompletion()
         }
