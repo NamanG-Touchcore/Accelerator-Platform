@@ -1,6 +1,6 @@
 <!-- <link rel="stylesheet" href="../../temp/dashforge.css"> -->
 
-<div *ngIf="sectionConfiguration && form && mode==1" class="topMargin">
+<div *ngIf="sectionConfiguration && form && mode==1" class="topMargin form-renderer-parent-div">
     <span class="ribbon-badge" *ngIf="formService.isSurveyReadOnlyMode()"><app-form-badge></app-form-badge></span>
     <div [formGroup]="form" *ngFor="let step of sectionConfiguration.steps">
         <div *ngIf="!step.isHidden">
@@ -37,7 +37,7 @@
         </div>
     </div>
 </div>
-<div *ngIf="sectionConfiguration && form && mode!=1" class="topMargin">
+<div *ngIf="sectionConfiguration && form && mode!=1" class="topMargin form-renderer-parent-div">
     <span class="ribbon-badge" *ngIf="formService.isSurveyReadOnlyMode()"><app-form-badge></app-form-badge></span>
     <div [formGroup]="form">
         <div [ngSwitch]="sectionConfiguration.steps[questionIndex] && sectionConfiguration.steps[questionIndex].step">

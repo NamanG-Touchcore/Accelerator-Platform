@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -8,11 +8,18 @@ import { FormStepNavigator } from '../services/form-step-navigator.service';
 import { FormInput } from '../models/form-input.model';
 import { SubjectService } from '../services/subject.service';
 import { DataStorage } from '../utility/storage';
+import { DomSanitizer } from '@angular/platform-browser';
+
+
+const cssFiles=['../../mirrorar.scss', '../../accelerator.scss'];
+let currentCssFile=1;
 
 @Component({
+  
   selector: 'app-form-renderer',
   templateUrl: './form-renderer.component.html',
-  styleUrls: ['./form-renderer.component.scss'],
+  styleUrls: ['./form-renderer.component.scss', cssFiles[currentCssFile]],
+  encapsulation: ViewEncapsulation.None
 })
 export class FormRenderer implements OnInit {
   constructor(
@@ -20,9 +27,15 @@ export class FormRenderer implements OnInit {
     private formStepNavigatorService: FormStepNavigator,
     private router: Router,
     private route: ActivatedRoute,
-    private subjectService: SubjectService
-  ) {}
+    private subjectService: SubjectService,
+    private sanitizer: DomSanitizer
+    ) {}
+    // styleUrl: string = 'assets/css/form-renderer.css';
 
+//  changeCSSStyle() {
+//   this.styleUrl = (this.styleUrl === './app.component.css') ? './another.css' : './app.component.css';
+// }
+  
   sectionConfiguration: any = null;
   form: FormGroup;
   questionIndex: number = 0;

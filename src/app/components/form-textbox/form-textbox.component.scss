@@ -1,0 +1,33 @@
+@import '../../../variable.scss';
+.validation-success {
+    position: absolute;
+    font-size: 1rem;
+    color: #0253a2;
+    text-align: center;
+    bottom: 1rem;
+    right: 1rem;
+    display: none;
+}
+
+.validation-unsuccess {
+    position: absolute;
+    font-size: 1rem;
+    color: #f45229;
+    text-align: center;
+    bottom: 1rem;
+    right: 1rem;
+    display: none;
+}
+
+.border-less-input,
+.border-less-input:focus,
+.border-less-input:hover,
+.border-less-input:focus-visible {
+    border: none;
+    outline: none;
+    width: inherit;
+}
+
+#displayStaticModal {
+    top: 3rem;
+}

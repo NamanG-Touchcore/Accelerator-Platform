@@ -7,12 +7,12 @@
             <div class="d-flex flex-column justify-content-center">
                 <div class="row question w-100 inlineBlock">
                 </div>
-                <div class="row form-group ">
-                    <label class="col-6 px-0 mb-0 control-label inline mt-1"><span
+                <div class=" form-group ">
+                    <label class=" px-0 mb-0 control-label inline mt-1"><span
                             *ngIf="!isQuestionTextEmpty() && !isOptionalQuestion()"
                             class="asterisk">*</span>{{formInput.question.text}}</label>
 
-                    <div class="col-6 px-0 input-group inline">
+                    <div class=" px-0 input-group inline">
                         <input class="form-control mt-1" [placeholder]="getPlaceholderText()" [ngStyle]="{'opacity': disabled ? '0.5' : '1' }" [ngClass]="{'capitalize': capitalizeWords(), 'uppercase': capitalizeCharachters() }" [step]="formInput.question.answerFormat.keyboardType === 'decimalPad'? '0.1':'1'"
                             [type]="type" [formControl]="formInput.form.controls[questionId]" (blur)="onBlur()" />
                         <div *ngIf="validationSuccessfull===true && !isEmptyResponse()" class="input-group-append">
