@@ -10,7 +10,7 @@ import { AppConfig } from './services/app-config.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss', '../accelerator.scss']
 })
 
 

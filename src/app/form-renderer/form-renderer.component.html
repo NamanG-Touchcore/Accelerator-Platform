@@ -1,3 +1,5 @@
+<!-- <link rel="stylesheet" href="../../temp/dashforge.css"> -->
+
 <div *ngIf="sectionConfiguration && form && mode==1" class="topMargin">
     <span class="ribbon-badge" *ngIf="formService.isSurveyReadOnlyMode()"><app-form-badge></app-form-badge></span>
     <div [formGroup]="form" *ngFor="let step of sectionConfiguration.steps">

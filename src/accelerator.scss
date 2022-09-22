@@ -1,0 +1,175 @@
+@import 'variable.scss';
+.question {
+    @extend .question;
+    text-align: justify;
+    // padding-left: $padding-left-15;
+    // padding-right: $padding-right-15;
+}
+
+.form-check-input {
+    margin-right: $margin-right-10;
+}
+
+div {
+    .check-box-container {
+        label {
+            display: block;
+            // border-bottom: 1px solid $checkbox-border-color;
+            // margin-bottom: $margin-bottom--2;
+            cursor: pointer;
+            word-break: break-word;
+            // padding-top: $checkbox-container-margin-top;
+            min-height: $checkbox-container-min-height;
+            // margin-bottom: $checkbox-container-margin-bottom;
+            font-weight: $font-600;
+            margin-left: $margin-left-8;
+            input {
+                visibility: hidden;
+            }
+            input+i {
+                visibility: hidden;
+                color: $primary-color;
+                margin-left: $input-i-margin-left;
+                margin-right: $input-i-margin-right;
+                float: right;
+                margin-top: $input-i-margin-top;
+                font-size: $input-i-font-size;
+            }
+            span {
+                display: inline-block;
+                vertical-align: top;
+                line-height: $checkbox-span-line-height;
+                width: $checkbox-span-width;
+                font-size: $answer-option-font-size;
+                font-weight: $font-600;
+                word-break: break-word;
+            }
+            input:checked+i+span {
+                color: $primary-color;
+            }
+            input:checked+i {
+                visibility: visible;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:320px) {
+    div {
+        .check-box-container {
+            label {
+                display: block;
+                // border-bottom: 1px solid $checkbox-border-color;
+                margin-bottom: $margin-bottom--2;
+                cursor: pointer;
+                height: auto;
+                word-break: break-word;
+                margin-top: $checkbox-container-margin-top;
+                padding-bottom: $checkbox-container-margin-bottom;
+                font-weight: $font-600;
+                margin-left: $margin-left-8;
+                span {
+                    width: $checkbox-span-width;
+                    font-size: $answer-option-font-size;
+                    font-weight: $font-600;
+                    word-break: break-word;
+                }
+                input+i {
+                    margin-top: $input-i-margin-top-0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:321px) and (max-width:480px) {
+    div {
+        .check-box-container {
+            label {
+                display: block;
+                // border-bottom: 1px solid rgba(0, 0, 0, .1);
+                margin-bottom: $margin-bottom--2;
+                cursor: pointer;
+                height: auto;
+                word-break: break-word;
+                margin-top: $checkbox-container-margin-top;
+                padding-bottom: $checkbox-container-margin-bottom;
+                font-weight: $font-600;
+                margin-left: $margin-left-8;
+                span {
+                    width: $checkbox-span-width;
+                    font-size: $answer-option-font-size;
+                    font-weight: $font-600;
+                    word-break: break-word;
+                }
+                input+i {
+                    margin-top: $input-i-margin-top-0;
+                }
+            }
+        }
+    }
+}
+
+@import 'variable.scss';
+.validation-success {
+    position: absolute;
+    font-size: 1rem;
+    color: #0253a2;
+    text-align: center;
+    top: 1rem;
+    right: 1rem;
+}
+
+.validation-unsuccess {
+    position: absolute;
+    font-size: 1rem;
+    color: #f45229;
+    text-align: center;
+    top: 1rem;
+    right: 1rem
+}
+
+.question {
+    @extend .question;
+}
+
+.border-less-input,
+.border-less-input:focus,
+.border-less-input:hover,
+.border-less-input:focus-visible {
+    border: none;
+    outline: none;
+    width: inherit;
+}
+
+.custom-form-control {
+    border: 1px solid #E1DCDC;
+    border-radius: 12px !important;
+    width: 100%;
+    outline: none;
+    height: 2.5rem;
+    padding: 0.5rem;
+}
+
+.control-label {
+    width: fit-content;
+    flex-grow: 1;
+    min-width: $control-label-min-width;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.inline {
+    display: inline;
+    flex-grow: 1;
+    min-width: 50%;
+}
+
+.form-control {
+    min-width: $control-label-min-width;
+    width: auto;
+}
+
+#displayStaticModal {
+    top: 3rem;
+}
