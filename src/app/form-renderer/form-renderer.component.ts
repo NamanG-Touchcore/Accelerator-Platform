@@ -12,7 +12,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 
 const cssFiles=['../../mirrorar.scss', '../../accelerator.scss'];
-let currentCssFile=1;
+let currentCssFile=0;
 
 @Component({
   
@@ -48,6 +48,7 @@ export class FormRenderer implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem('s1'))
     if (!this.formService.configuration) {
       // this.route.navigate(['']);
       this.formService.setSurveyConfiguration('')

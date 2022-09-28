@@ -7,6 +7,7 @@ export class DataStorage {
 
     public static saveSurveySectionResponse(sectionResponseId: string, sectionResponseItemData: SurveySectionResponseItemData[], surveyResponseId: string): void {
         let sectionResponse = JSON.parse(localStorage.getItem(`${surveyResponseId}_sectionResponses`))
+        // if(sectionResponse)
         sectionResponse = sectionResponse.map(ob => {
             if (ob.sectionResponseId === sectionResponseId) {
                 ob.itemDatas.push(...sectionResponseItemData)

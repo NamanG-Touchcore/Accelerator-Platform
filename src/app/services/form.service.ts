@@ -117,6 +117,11 @@ export class FormService {
     );
   }
 
+  getSections():any {
+    // console.log(surveyResponsesFromJson[])
+    return surveyResponsesFromJson[0].sectionResponses
+  }
+
   setRegistrationConfiguration(): Observable<any> {
     let params = {
       loader: true,
