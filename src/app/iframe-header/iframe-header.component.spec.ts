@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IFrameComponent } from './i-frame.component';
+import { IframeHeaderComponent } from './iframe-header.component';
 
-describe('IFrameComponent', () => {
-  let component: IFrameComponent;
-  let fixture: ComponentFixture<IFrameComponent>;
+describe('IframeHeaderComponent', () => {
+  let component: IframeHeaderComponent;
+  let fixture: ComponentFixture<IframeHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IFrameComponent ]
+      declarations: [ IframeHeaderComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IFrameComponent);
+    fixture = TestBed.createComponent(IframeHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

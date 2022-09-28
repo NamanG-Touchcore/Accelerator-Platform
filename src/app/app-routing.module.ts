@@ -9,15 +9,11 @@ import { StaticComponentRendererComponent } from './static-component-renderer/st
 import { SubjectRegistrationComponent } from './subject-registration/subject-registration.component';
 import { SubjectProfileComponent } from './subject-profile/subject-profile.component';
 import { FormRendererContainerComponent } from './form-renderer-container/form-renderer-container.component';
-import { IFrameComponent } from './i-frame/i-frame.component';
 import { FormRendererIframeComponent } from './form-renderer-iframe/form-renderer-iframe.component';
 const routes: Routes = [{
   path: 'legalStatement', component: LegalStatementComponent
 }, {
   path: 'surveys', component: ListSurveyComponent
-},
-{
- path: 'iframe', component: IFrameComponent
 },
 {
   path: 'sections/:surveyInternalId', component: ListSurveySectionComponent

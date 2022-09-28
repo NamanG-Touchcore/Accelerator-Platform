@@ -13,8 +13,8 @@ export class FormRendererIframeComponent implements OnInit {
   constructor(public formService:FormService,private route: ActivatedRoute, private deviceService: DeviceDetectorService,    private router: Router,
     ) { }
   sectionsData:Array<any> = null;
-  sectionId:Array<any> = null;
-  surveyId:Array<any> = null;
+  sectionId:any = null;
+  surveyId:any = null;
 
   ngOnInit(): void {
     this.sectionsData = this.formService.getSections()
@@ -23,7 +23,9 @@ export class FormRendererIframeComponent implements OnInit {
       this.sectionId = params['sectionInternalId'];
       this.surveyId = params['surveyInternalId'];
       // console.log(sectionInternalId)
-
+    });
+    this.route.queryParams.subscribe((params) => {
+      console.log(params)
     });
   }
   navigate(section:any):any{

@@ -87,8 +87,9 @@ import { FormShowEsignatureInfoComponent } from './components/form-show-esignatu
 import { AppConfig } from './services/app-config.service';
 import { FormFileUploadComponent } from './components/form-file-upload/form-file-upload.component';
 import { FormRendererContainerComponent } from './form-renderer-container/form-renderer-container.component';
-import { IFrameComponent } from './i-frame/i-frame.component';
 import { FormRendererIframeComponent } from './form-renderer-iframe/form-renderer-iframe.component';
+import { IframeHeaderComponent } from './iframe-header/iframe-header.component';
+import { IframeFooterComponent } from './iframe-footer/iframe-footer.component';
 registerLocaleData(es);
 registerLocaleData(de);
 registerLocaleData(en);
@@ -175,8 +176,9 @@ const configFactory = (configService: AppConfig) => {
     FormShowEsignatureInfoComponent,
     FormFileUploadComponent,
     FormRendererContainerComponent,
-    IFrameComponent,
-    FormRendererIframeComponent
+    FormRendererIframeComponent,
+    IframeHeaderComponent,
+    IframeFooterComponent
   ],
   imports: [
     BrowserModule,

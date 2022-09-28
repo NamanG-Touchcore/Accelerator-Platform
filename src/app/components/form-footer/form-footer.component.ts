@@ -68,8 +68,8 @@ export class FormFooterComponent implements OnInit {
     })
     this.formStepNavigatorService.footerVisible.subscribe(result=>{
       this.visible = result;
+      console.log(result)
     })
-
   }
 
 

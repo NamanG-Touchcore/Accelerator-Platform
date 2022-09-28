@@ -1,7 +1,8 @@
-<div class="d-flex flex-wrap">
+<!-- <div class="d-flex flex-wrap">
     <ul class="steps gap-1 flex-wrap">
         <li class="step-item" [ngClass]="{'active': sectionId === section.section.internalIdentifier}" *ngFor="let section of sectionsData;let i=index" (click)="navigate(section)"><a tabindex="-1" class="step-link"><span class="step-number">{{i+1}}</span> <span class="step-title">{{formService.readSectionFromJson(section.section.internalIdentifier)}}</span></a></li>
-        <!-- <li id="" class="step-item"><a tabindex="-1" class="step-link"><span class="step-number">2</span> <span class="step-title">Billing Details</span></a></li> -->
     </ul>
-</div>
+</div> -->
+<app-iframe-header [sectionsData]="sectionsData" (section)="navigate($event)"></app-iframe-header>
 <app-form-renderer></app-form-renderer>
+<app-iframe-footer></app-iframe-footer>

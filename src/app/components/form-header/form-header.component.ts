@@ -28,6 +28,7 @@ export class FormHeaderComponent implements OnInit {
   step: any = null;
   surveyStarted: boolean = false
   routeUrl: string = ""
+  visible: boolean = true
 
   ngOnInit(): void {
     this.route.events.subscribe(value => {
@@ -43,6 +44,10 @@ export class FormHeaderComponent implements OnInit {
     })
     this.formStepNavigatorService.surveyStartedSubject.subscribe(surveyStarted => {
       this.surveyStarted = surveyStarted // If survey has started, then show cancel button
+    })
+    this.formStepNavigatorService.footerVisible.subscribe(result=>{
+      this.visible = result;
+      console.log(result)
     })
   }
 

@@ -15,7 +15,7 @@ const cssFiles=['../../mirrorar.scss', '../../accelerator.scss'];
 let currentCssFile=0;
 
 @Component({
-  
+
   selector: 'app-form-renderer',
   templateUrl: './form-renderer.component.html',
   styleUrls: ['./form-renderer.component.scss', cssFiles[currentCssFile]],
@@ -35,7 +35,7 @@ export class FormRenderer implements OnInit {
 //  changeCSSStyle() {
 //   this.styleUrl = (this.styleUrl === './app.component.css') ? './another.css' : './app.component.css';
 // }
-  
+
   sectionConfiguration: any = null;
   form: FormGroup;
   questionIndex: number = 0;
@@ -54,7 +54,7 @@ export class FormRenderer implements OnInit {
       this.formService.setSurveyConfiguration('')
     }
     this.route.queryParams.subscribe((params) => {
-      console.log(params); // { order: "popular" }
+      console.log(params);
       this.mode = params['m'];
       if (this.mode == 1) {
         this.formStepNavigatorService.footerVisible.next(false);
